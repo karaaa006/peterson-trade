@@ -21,12 +21,9 @@
 }
 
 .achievements__bottom {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 80px;
-
-  & > * {
-    flex: 1;
-  }
 }
 
 .achievements__tabs-nav {
@@ -62,10 +59,11 @@
   font-size: 20px;
   font-weight: 300;
   line-height: 1;
+  text-align: center;
   text-transform: uppercase;
 
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.5s ease;
 
   &::before {
     content: '';
@@ -87,4 +85,46 @@
       opacity: 1;
     }
   }
+}
+
+.achievements__info-tab {
+  * {
+    font-size: 20px;
+    line-height: 1.219;
+    text-align: justify;
+  }
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  ul {
+    padding-left: 20px;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+
+    li {
+      list-style: disc;
+
+      &:not(:last-child) {
+        margin-bottom: 17px;
+      }
+    }
+  }
+}
+
+.achievements__screenshot {
+  border-radius: 8px;
+}
+
+.achievements__screenshot-slider {
+  max-width: 100%;
+
+  border-radius: 8px;
 }

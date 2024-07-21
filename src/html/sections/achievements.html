@@ -3,16 +3,20 @@
     <div class="achievements">
       <div class="achievements__top">
         <div class="achievements__tabs-nav">
-          <button class="achievements__tabs-nav-item active">Наші угоди</button>
-          <button class="achievements__tabs-nav-item">
+          <button class="achievements__tabs-nav-item active" data-tab-id="0">
+            Наші угоди
+          </button>
+          <button class="achievements__tabs-nav-item" data-tab-id="1">
             Результати турніру
           </button>
-          <button class="achievements__tabs-nav-item">Угоди студентів</button>
+          <button class="achievements__tabs-nav-item" data-tab-id="2">
+            Угоди студентів
+          </button>
         </div>
         <div class="achievements__title-wrap">
           <div class="section__title">Досягнення</div>
           <div class="achievements__slider-nav">
-            <button class="arrow-btn achievements__slider-nav-btn">
+            <button class="arrow-btn achievements__slider-nav-btn prev">
               <include
                 src="./html/components/icon.html"
                 locals='{
@@ -22,7 +26,7 @@
                 }'
               ></include>
             </button>
-            <button class="arrow-btn revert achievements__slider-nav-btn">
+            <button class="arrow-btn revert achievements__slider-nav-btn next">
               <include
                 src="./html/components/icon.html"
                 locals='{
@@ -35,33 +39,217 @@
           </div>
         </div>
       </div>
-      <div class="achievements__bottom">
-        <div class="achievements__tabs-info-wrap">
-          <div class="swiper achievements__tabs-info-slider">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="achievements__info-tab">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur. At sit risus donec
-                    viverra fusce id volutpat morbi amet. Mi facilisis commodo
-                    egestas euismod egestas. Adipiscing non facilisis potenti
-                    consequat. Elit suspendisse velit enim porttitor interdum
-                    odio sagittis.
-                  </p>
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet consectetur.</li>
-                    <li>
-                      At sit risus donec viverra fusce id volutpat morbi amet.
-                    </li>
-                    <li>Mi facilisis commodo egestas euismod egestas.</li>
-                    <li>Adipiscing non facilisis potenti consequat.</li>
-                  </ul>
+      <div class="swiper achievements__tab-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="achievements__bottom" data-tab-id="0">
+              <div class="achievements__info-tab">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. At sit risus donec
+                  viverra fusce id volutpat morbi amet. Mi facilisis commodo
+                  egestas euismod egestas. Adipiscing non facilisis potenti
+                  consequat. Elit suspendisse velit enim porttitor interdum odio
+                  sagittis.
+                </p>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet consectetur.</li>
+                  <li>
+                    At sit risus donec viverra fusce id volutpat morbi amet.
+                  </li>
+                  <li>Mi facilisis commodo egestas euismod egestas.</li>
+                  <li>Adipiscing non facilisis potenti consequat.</li>
+                </ul>
+              </div>
+              <div class="achievements__tabs-slider-wrap">
+                <div class="swiper achievements__screenshot-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_1.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_2.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_3.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_11.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_12.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_13.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="achievements__bottom" data-tab-id="1">
+              <div class="achievements__info-tab">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. At sit risus donec
+                  viverra fusce id volutpat morbi amet. Mi facilisis commodo
+                  egestas euismod egestas. Adipiscing non facilisis potenti
+                  consequat.
+                </p>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet consectetur.</li>
+                  <li>Lorem ipsum dolor.</li>
+                  <li>
+                    At sit risus donec viverra fusce id volutpat morbi amet.
+                  </li>
+                  <li>Mi facilisis commodo egestas euismod egestas.</li>
+                  <li>Adipiscing non facilisis potenti consequat.</li>
+                </ul>
+              </div>
+              <div class="achievements__tabs-slider-wrap">
+                <div class="swiper achievements__screenshot-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_1.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_2.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_3.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_11.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_12.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_13.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="achievements__bottom" data-tab-id="2">
+              <div class="achievements__info-tab">
+                <p>
+                  Elit suspendisse velit enim porttitor interdum odio sagittis.
+                  Elit suspendisse velit enim porttitor interdum odio sagittis.
+                  Elit suspendisse velit enim porttitor interdum odio sagittis.
+                </p>
+                <p>
+                  Mi facilisis commodo egestas euismod egestas. Elit suspendisse
+                  velit enim porttitor interdum odio sagittis.
+                </p>
+                <ul>
+                  <li>Mi facilisis commodo egestas euismod egestas.</li>
+                  <li>
+                    At sit risus donec viverra fusce id volutpat morbi amet.
+                  </li>
+                  <li>Adipiscing non facilisis potenti consequat.</li>
+                </ul>
+              </div>
+              <div class="achievements__tabs-slider-wrap">
+                <div class="swiper achievements__screenshot-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_1.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_2.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_3.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_11.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_12.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/images/studtrade_13.jpg"
+                        alt=""
+                        class="achievements__screenshot"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="achievements__tabs-slider-wrap"></div>
       </div>
     </div>
   </div>
