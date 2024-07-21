@@ -1,0 +1,68 @@
+<section class="section achievements-section">
+  <div class="container">
+    <div class="achievements">
+      <div class="achievements__top">
+        <div class="achievements__tabs-nav">
+          <button class="achievements__tabs-nav-item active">Наші угоди</button>
+          <button class="achievements__tabs-nav-item">
+            Результати турніру
+          </button>
+          <button class="achievements__tabs-nav-item">Угоди студентів</button>
+        </div>
+        <div class="achievements__title-wrap">
+          <div class="section__title">Досягнення</div>
+          <div class="achievements__slider-nav">
+            <button class="arrow-btn achievements__slider-nav-btn">
+              <include
+                src="./html/components/icon.html"
+                locals='{
+                    "class": "arrow-btn__icon",
+                    "icon": "arrow-left",
+                    "size": "45"
+                }'
+              ></include>
+            </button>
+            <button class="arrow-btn revert achievements__slider-nav-btn">
+              <include
+                src="./html/components/icon.html"
+                locals='{
+                    "class": "arrow-btn__icon",
+                    "icon": "arrow-right",
+                    "size": "45"
+                }'
+              ></include>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="achievements__bottom">
+        <div class="achievements__tabs-info-wrap">
+          <div class="swiper achievements__tabs-info-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="achievements__info-tab">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur. At sit risus donec
+                    viverra fusce id volutpat morbi amet. Mi facilisis commodo
+                    egestas euismod egestas. Adipiscing non facilisis potenti
+                    consequat. Elit suspendisse velit enim porttitor interdum
+                    odio sagittis.
+                  </p>
+                  <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur.</li>
+                    <li>
+                      At sit risus donec viverra fusce id volutpat morbi amet.
+                    </li>
+                    <li>Mi facilisis commodo egestas euismod egestas.</li>
+                    <li>Adipiscing non facilisis potenti consequat.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="achievements__tabs-slider-wrap"></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+.section-about-us {
+  padding-top: 225px;
+  padding-bottom: 355px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -225px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    aspect-ratio: 1920 / 671;
+
+    background: url('../../assets/images/wave-bg.webp') no-repeat center center;
+  }
+}
+
+.about-us {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.about-us__content {
+  max-width: 805px;
+}
+
+.about-us__text {
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 20px;
+  line-height: 1.219;
+  text-align: justify;
+}
+
+.about-us__counters {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-us__counter {
+  display: flex;
+  justify-content: space-between;
+  &:not(:last-child) {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+.about-us__counter-content {
+  min-width: 523px;
+}
+
+.about-us__counter-value {
+  margin-bottom: 8px;
+
+  font-family: var(--font-title);
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 1;
+
+  .count-up {
+    font-family: var(--font-title);
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .plus {
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 96px;
+  }
+}
+
+.about-us__counter-text {
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 20px;
+  line-height: 1.219;
+}
+
+.about-us__counter-num {
+  color: rgba(255, 255, 255, 0.2);
+
+  font-size: 20px;
+  line-height: 1.219;
+  letter-spacing: 3px;
+}
