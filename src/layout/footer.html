@@ -1,29 +1,66 @@
 <footer class="footer">
-  <div class="cont">
-    <a href="./index.html" class="logo">
-      <img src="./assets/images/logo.svg" alt="" />
-    </a>
-    <navbar class="navbar">
-      <a href="">About Us</a>
-      <a href="">Job Board</a>
-      <a href="">Insights Hub</a>
-      <a href="">Meet the team</a>
-      <a href="">Contact Us</a>
-    </navbar>
-    <div class="bottom-info">
-      <p>© 2023 BOLD Agency</p>
-
-      <navbar class="navbar">
-        <a href="">Terms</a>
-        <a href="">Cookies</a>
-        <a href="">Privacy policy</a>
-      </navbar>
+  <div class="container">
+    <div class="footer__nav-wrap">
+      <div class="footer__nav">
+        <a href="#" class="footer__nav-item">Про нас</a>
+        <a href="#" class="footer__nav-item">Досягнення</a>
+        <a href="#" class="footer__nav-item">Scalping</a>
+        <a href="#" class="footer__nav-item">Навчання</a>
+      </div>
+      <a href="./index.html" class="footer__logo">
+        <img src="./assets/images/logo.svg" alt="" />
+      </a>
+      <div class="footer__nav">
+        <a href="#" class="footer__nav-item">Ком’юніті</a>
+        <a href="#" class="footer__nav-item">Блог</a>
+        <a href="#" class="footer__nav-item">Контакти</a>
+        <div class="footer__nav-socials">
+          <a href="#" class="footer__nav-socials-item">
+            <include
+              src="./html/components/icon.html"
+              locals='{
+                    "class": "social-card__icon",
+                    "icon": "ig-v2",
+                    "size": "24"
+                }'
+            ></include>
+          </a>
+          <a href="#" class="footer__nav-socials-item">
+            <include
+              src="./html/components/icon.html"
+              locals='{
+                    "class": "social-card__icon",
+                    "icon": "yt-v2",
+                    "size": "24"
+                }'
+            ></include>
+          </a>
+          <a href="#" class="footer__nav-socials-item">
+            <include
+              src="./html/components/icon.html"
+              locals='{
+                    "class": "social-card__icon",
+                    "icon": "tg-v2",
+                    "size": "24"
+                }'
+            ></include>
+          </a>
+        </div>
+      </div>
     </div>
-
-    <a
-      href="https://www.boldidentities.com/"
-      target="_blank"
-      id="bold-credits"
-    ></a>
+    <div class="footer__contacts">
+      <a href="tel:+38 (096) 68-59-162" class="footer__phone">
+        +38 (096) 68-59-162
+      </a>
+      <div class="footer__address-wrap">
+        <a href="#" class="footer__credentials-link"
+          >Політика конфіденційності</a
+        >
+        <div class="footer__address">
+          Україна, м. Київ, вул. Богдана Хмельницького, 10
+        </div>
+        <a href="#" class="footer__credentials-link">Публічний договір</a>
+      </div>
+    </div>
   </div>
 </footer>
