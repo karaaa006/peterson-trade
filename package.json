@@ -135,6 +135,7 @@
   },
   "dependencies": {
     "countup.js": "^2.6.2",
+    "gsap": "^3.12.5",
     "loading-attribute-polyfill": "^2.1.1",
     "normalize.css": "^8.0.1",
     "npm-run-all": "^4.1.5",

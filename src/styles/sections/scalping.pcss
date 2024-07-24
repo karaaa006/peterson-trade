@@ -1,6 +1,8 @@
 .scalping-section {
   padding-top: 155px;
   padding-bottom: 150px;
+
+  backdrop-filter: blur(75px);
 }
 
 .scalping__title {
@@ -44,4 +46,38 @@
 
 .scalping__more-btn {
   margin: 0 auto;
+}
+
+.section-wrap {
+  position: relative;
+}
+
+.glow {
+  position: absolute;
+  z-index: -1;
+
+  display: inline-block;
+
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.219;
+  border-radius: 50%;
+
+  transition: opacity 0.4s 0.2s, scale 0.4s 0.2s;
+}
+
+.glow-sm {
+  width: 150px;
+  height: 150px;
+
+  background: linear-gradient(90deg, #ff8082 0%, #c54a4c 100%);
+
+  /* transition-delay: 0.025s; */
+}
+
+.glow-xl {
+  width: 300px;
+  height: 300px;
+
+  background: linear-gradient(90deg, #ff494b 0%, #b5191b 100%);
 }
