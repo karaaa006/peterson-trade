@@ -72,7 +72,8 @@
     "dev": "npm-run-all --parallel styles serve",
     "build": "parcel build ./src/*.html --public-url ./ --no-cache",
     "serve": "npm run clean:output && parcel serve ./src/*.html ./src/styles/.output/style.css --no-cache",
-    "styles": "gulp dev"
+    "styles": "gulp dev",
+    "gh-deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@parcel/compressor-brotli": "^2.9.3",
@@ -90,6 +91,7 @@
     "del": "^7.1.0",
     "dotenv": "^16.4.4",
     "eslint": "^8.43.0",
+    "gh-pages": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-if": "^3.0.0",
     "gulp-postcss": "^9.0.1",
