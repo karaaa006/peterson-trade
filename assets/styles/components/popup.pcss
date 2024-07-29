@@ -1,0 +1,97 @@
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.5s ease;
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popup__content-wrap {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 90%;
+  min-width: 300px;
+  max-width: 1200px;
+
+  padding: 50px;
+  border-radius: 10px;
+
+  background: var(--cl-black);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.popup__content {
+  width: 100%;
+}
+
+.popup__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 999px;
+
+  color: var(--cl-black);
+}
+
+@keyframes popupSlide {
+  from {
+    transform: translateY(var(--pp-default-translate-y-from))
+      translateX(var(--pp-default-translate-x-from));
+    opacity: var(--pp-opacity-from);
+  }
+
+  to {
+    transform: translateY(var(--pp-default-translate-y-to))
+      translateX(var(--pp-default-translate-x-to));
+    opacity: var(--pp-opacity-to);
+  }
+}
+
+@keyframes opacityPopupBg {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gradientPopupBtn {
+  0% {
+    transform: translateX(-100%) skew(45deg);
+  }
+
+  100% {
+    transform: translateX(100%) skew(45deg);
+  }
+}

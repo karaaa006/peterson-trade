@@ -1,0 +1,148 @@
+.hero-section {
+  background: url('../../assets/images/hero-bg.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.hero {
+  display: flex;
+  min-height: 100vh;
+
+  padding-top: 20%;
+  padding-bottom: 80px;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  min-height: 100%;
+  flex: 1 1 auto;
+}
+
+.hero__title-wrap {
+  position: relative;
+  z-index: 1;
+
+  width: fit-content;
+  margin: 0 auto;
+  padding: 57px 38px 47px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    display: block;
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    filter: blur(30px);
+  }
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  font-family: var(--font-title);
+  font-size: 120px;
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  color: var(--cl-white);
+}
+
+.hero__title-shadowed {
+  background: linear-gradient(
+    rgba(153, 153, 153, 0.7),
+    rgba(255, 255, 255, 0.7)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 75px;
+  margin-top: 4px;
+}
+
+.hero__list-item {
+  color: var(--cl-green);
+
+  font-size: 29px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.hero__partner-list {
+  width: 100%;
+
+  margin-top: auto;
+}
+
+.hero__partner-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.hero__partner-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    130.31deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.4) 20.87%,
+    rgba(255, 255, 255, 0) 51.76%
+  );
+
+  width: 237px;
+  height: 71px;
+
+  &:nth-child(n + 4) {
+    background: linear-gradient(
+      -130.31deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.4) 20.87%,
+      rgba(255, 255, 255, 0) 51.76%
+    );
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+
+    display: block;
+    border-radius: 11px;
+
+    background: rgba(29, 32, 35, 1);
+  }
+
+  img {
+    position: relative;
+    z-index: 1;
+  }
+}
