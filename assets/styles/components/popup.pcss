@@ -59,7 +59,14 @@
   border: none;
   border-radius: 999px;
 
-  color: var(--cl-black);
+  color: var(--cl-white);
+  background: transparent;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: var(--cl-red);
+  }
 }
 
 @keyframes popupSlide {
