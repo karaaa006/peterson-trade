@@ -592,8 +592,10 @@ var _achievementsComponentJs = require("./components/achievements.component.js")
 var _glowComponentJs = require("./components/glow.component.js");
 var _slidersComponentJs = require("./components/sliders.component.js");
 var _popupsComponentJs = require("./components/popups.component.js");
+var _headerComponentJs = require("./components/header.component.js");
+var _contactsComponentJs = require("./components/contacts.component.js");
 
-},{"./utils/vh.utils.js":"bDUTE","./libs/countUp.lib.js":"alcAw","./components/uploadFile.component.js":"9HI75","./components/inputs.component.js":"iOnyx","./components/achievements.component.js":"8Glio","./components/glow.component.js":"cMuKO","./components/sliders.component.js":"iW5n2","./components/popups.component.js":"5rHsd"}],"bDUTE":[function(require,module,exports) {
+},{"./utils/vh.utils.js":"bDUTE","./libs/countUp.lib.js":"alcAw","./components/uploadFile.component.js":"9HI75","./components/inputs.component.js":"iOnyx","./components/achievements.component.js":"8Glio","./components/glow.component.js":"cMuKO","./components/sliders.component.js":"iW5n2","./components/popups.component.js":"5rHsd","./components/header.component.js":"7ynrW","./components/contacts.component.js":"03QD1"}],"bDUTE":[function(require,module,exports) {
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 const vhUtils = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
@@ -8880,7 +8882,7 @@ function EffectCards({ swiper, extendParams, on }) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _gsap = require("gsap");
 var _gsapDefault = parcelHelpers.interopDefault(_gsap);
-const scalpingSection = document.querySelector("#scalping-section-with-glow");
+const scalpingSection = document.querySelector("#scalping");
 const scalpingSectionRect = scalpingSection.getBoundingClientRect();
 let svgns = "http://www.w3.org/2000/svg";
 let root = document.querySelector(".glow-svg");
@@ -12997,6 +12999,44 @@ if (scalpingPopup) {
     });
 }
 
-},{}]},["6yMdq","1SICI"], "1SICI", "parcelRequire54eb")
+},{}],"7ynrW":[function(require,module,exports) {
+const dropMenu = document.querySelector(".header__drop-menu");
+const burger = document.querySelector(".header__burger");
+if (burger && dropMenu) burger.addEventListener("click", ()=>{
+    dropMenu.classList.toggle("active");
+    burger.classList.toggle("active");
+});
+window.addEventListener("scroll", ()=>{
+    if (window.scrollY > 0) document.querySelector(".header").classList.add("scroll");
+    else document.querySelector(".header").classList.remove("scroll");
+});
+window.addEventListener("click", (event)=>{
+    if (!event.target.closest(".header__burger") && !event.target.closest(".header__drop-menu")) {
+        dropMenu.classList.remove("active");
+        burger.classList.remove("active");
+    }
+});
+
+},{}],"03QD1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _gsap = require("gsap");
+var _gsapDefault = parcelHelpers.interopDefault(_gsap);
+const contactForm = document.querySelector(".contact-form");
+console.log("contactForm", contactForm);
+let b1 = "linear-gradient(216deg, #ffffff 25.97%, rgba(255, 255, 255, 0) 36.63%, rgba(255, 255, 255, 0) 67.82%, #ffffff 78.13%)";
+let b2 = "linear-gradient(144deg, #ffffff 25.97%, rgba(255, 255, 255, 0) 36.63%, rgba(255, 255, 255, 0) 67.82%, #ffffff 78.13%)";
+if (contactForm) (0, _gsapDefault.default).timeline({
+    repeat: -1,
+    yoyo: "true",
+    repeatDelay: 3
+}).add((0, _gsapDefault.default).set(contactForm, {
+    background: b1
+})).add((0, _gsapDefault.default).to(contactForm, {
+    ease: "none",
+    duration: 6,
+    background: b2
+})).play(0);
+
+},{"gsap":"k3DGt","@parcel/transformer-js/src/esmodule-helpers.js":"6elpC"}]},["6yMdq","1SICI"], "1SICI", "parcelRequire54eb")
 
 //# sourceMappingURL=scripts.18dbc454.js.map

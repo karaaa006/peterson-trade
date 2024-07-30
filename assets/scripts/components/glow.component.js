@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 
-const scalpingSection = document.querySelector('#scalping-section-with-glow');
+const scalpingSection = document.querySelector('#scalping');
 
 const scalpingSectionRect = scalpingSection.getBoundingClientRect();
 

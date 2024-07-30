@@ -8,3 +8,5 @@ import './components/achievements.component.js';
 import './components/glow.component.js';
 import './components/sliders.component.js';
 import './components/popups.component.js';
+import './components/header.component.js';
+import './components/contacts.component.js';
