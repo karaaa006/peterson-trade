@@ -13,6 +13,11 @@
     aspect-ratio: 1920 / 671;
 
     background: url('../../assets/images/wave-bg.webp') no-repeat center center;
+    background-size: cover;
+
+    @mixin min-media 1920 {
+      bottom: -350px;
+    }
   }
 }
 
