@@ -38,6 +38,7 @@
 .social-card {
   --width: calc((100% - (var(--columns) - 1) * var(--gap)) / var(--columns));
 
+  position: relative;
   overflow: hidden;
 
   display: flex;
@@ -54,16 +55,55 @@
 
   color: var(--cl-white);
   background: rgba(0, 0, 0, 0.5);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+      264.82deg,
+      #16171a 0%,
+      #212427 64.87%,
+      #2d3135 100%
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+
+    .social-card__subscribers {
+      color: var(--cl-white);
+    }
+
+    .social-card__icon {
+      filter: brightness(1);
+    }
+  }
 }
 
 .social-card__title-wrap {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+
+  font-weight: 400;
 }
 
 .social-card__info {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   justify-content: space-between;
   align-items: end;
@@ -73,6 +113,8 @@
   /* flex-shrink: 0; */
   margin-bottom: -2.6em;
   color: rgba(108, 114, 121, 1);
+
+  transition: color 0.3s ease-in-out;
 
   .count-up {
     display: inline-block;
@@ -101,4 +143,39 @@
   font-size: 20px;
   line-height: 1.219;
   text-align: right;
+}
+
+.social-card__icon {
+  transition: filter 0.3s ease-in-out;
+
+  filter: brightness(0) invert(1);
+
+  &.instagram {
+    --hover-color: #ff543e;
+    /* background: radial-gradient(
+        92.18% 99.11% at 26.56% 107.7%,
+        #ffdd55 0%,
+        #ffdd55 10%,
+        #ff543e 50%,
+        #c837ab 100%
+      ),
+      radial-gradient(
+        179.06% 43.44% at -16.75% 7.2%,
+        #3771c8 0%,
+        #3771c8 12.8%,
+        rgba(102, 0, 255, 0) 100%
+      ); */
+  }
+
+  &.telegram {
+    --hover-color: #2aabee;
+  }
+
+  &.discord {
+    --hover-color: #5865f2;
+  }
+
+  &.youtube {
+    --hover-color: #ef3737;
+  }
 }
