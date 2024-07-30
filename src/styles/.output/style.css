@@ -693,6 +693,7 @@ body::-webkit-scrollbar-thumb {
 .lang-selector__dropdown {
   position: absolute;
   top: 100%;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
