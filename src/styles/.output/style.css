@@ -200,7 +200,6 @@ li {
 
 a {
   font-size: clamp(16px, calc(16px + 4.00 * ((100vw - 768px) / 1152)), 20px);
-  font-weight: 500;
   display: inline-block;
   line-height: 100%;
 }
@@ -685,9 +684,15 @@ body::-webkit-scrollbar-thumb {
   transition: color 0.3s;
 }
 
-.footer__nav-socials-item:hover {
-    color: var(--cl-white);
-  }
+.footer__nav-socials-item:hover .footer__nav-socials-icon {
+      color: var(--cl-white);
+    }
+
+.footer__nav-socials-icon {
+  color: rgba(0, 179, 85, 1);
+
+  transition: color 0.3s;
+}
 
 .footer__contacts {
   display: flex;
