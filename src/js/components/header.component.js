@@ -25,3 +25,17 @@ window.addEventListener('click', (event) => {
     burger.classList.remove('active');
   }
 });
+
+const langSelector = document.querySelector('.lang-selector');
+
+if (langSelector) {
+  langSelector.addEventListener('click', () => {
+    langSelector.classList.toggle('active');
+  });
+
+  window.addEventListener('click', (event) => {
+    if (!event.target.closest('.lang-selector')) {
+      langSelector.classList.remove('active');
+    }
+  });
+}

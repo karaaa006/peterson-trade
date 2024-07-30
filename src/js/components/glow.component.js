@@ -2,8 +2,6 @@ import gsap from 'gsap';
 
 const scalpingSection = document.querySelector('#scalping');
 
-const scalpingSectionRect = scalpingSection.getBoundingClientRect();
-
 let svgns = 'http://www.w3.org/2000/svg';
 let root = document.querySelector('.glow-svg');
 let ease = 0.75;
@@ -13,11 +11,31 @@ let pointer = {
   y: window.innerHeight / 2,
 };
 
-scalpingSection.addEventListener('mousemove', (event) => {
-  console.log(event.offsetY);
-  pointer.x = event.clientX;
-  pointer.y = event.clientY - scalpingSectionRect.top - 50;
-});
+const handleMouseMove = (event) => {
+  const scalpingSectionRect = scalpingSection.getBoundingClientRect();
+
+  // console.dir(scalpingSectionRect);
+  console.log(
+    scalpingSectionRect.top + scalpingSectionRect.height - event.clientY
+  );
+  if (event.clientY - scalpingSectionRect.top <= 300) {
+    gsap.to('line', { opacity: 0, y: 300 });
+  } else if (
+    scalpingSectionRect.top + scalpingSectionRect.height - event.clientY <=
+    300
+  ) {
+    gsap.to('line', {
+      opacity: 0,
+      y: scalpingSectionRect.height - 300,
+    });
+  } else {
+    gsap.to('line', { opacity: 1 });
+  }
+  pointer.x = event.clientX - scalpingSectionRect.left;
+  pointer.y = event.clientY - scalpingSectionRect.top;
+};
+
+scalpingSection.addEventListener('mousemove', handleMouseMove);
 
 let leader = (prop) => {
   return prop === 'x' ? pointer.x : pointer.y;
