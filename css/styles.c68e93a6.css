@@ -638,6 +638,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   position: absolute;
   top: 100%;
+  overflow: hidden;
   transform: translateY(-20px);
 }
 
