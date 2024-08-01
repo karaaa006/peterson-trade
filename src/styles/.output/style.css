@@ -1403,11 +1403,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 .hero {
+  --padding-top: 0px;
+
   display: flex;
 
   height: 100%;
 
-  padding-top: 10%;
+  padding-top: var(--padding-top);
 }
 
 .hero__content {
@@ -1551,7 +1553,7 @@ body::-webkit-scrollbar-thumb {
     inset: 1px;
 
     display: block;
-    border-radius: 11px;
+    border-radius: clamp(6px, calc(6px + 6.00 * ((100vw - 768px) / 1152)), 12px);
 
     background: rgba(29, 32, 35, 1);
   }

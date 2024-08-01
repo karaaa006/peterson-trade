@@ -10,3 +10,4 @@ import './components/sliders.component.js';
 import './components/popups.component.js';
 import './components/header.component.js';
 import './components/contacts.component.js';
+import './components/hero.component.js';
