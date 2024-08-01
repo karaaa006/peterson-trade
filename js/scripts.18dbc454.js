@@ -594,8 +594,9 @@ var _slidersComponentJs = require("./components/sliders.component.js");
 var _popupsComponentJs = require("./components/popups.component.js");
 var _headerComponentJs = require("./components/header.component.js");
 var _contactsComponentJs = require("./components/contacts.component.js");
+var _heroComponentJs = require("./components/hero.component.js");
 
-},{"./utils/vh.utils.js":"bDUTE","./libs/countUp.lib.js":"alcAw","./components/uploadFile.component.js":"9HI75","./components/inputs.component.js":"iOnyx","./components/achievements.component.js":"8Glio","./components/glow.component.js":"cMuKO","./components/sliders.component.js":"iW5n2","./components/popups.component.js":"5rHsd","./components/header.component.js":"7ynrW","./components/contacts.component.js":"03QD1"}],"bDUTE":[function(require,module,exports) {
+},{"./utils/vh.utils.js":"bDUTE","./libs/countUp.lib.js":"alcAw","./components/uploadFile.component.js":"9HI75","./components/inputs.component.js":"iOnyx","./components/achievements.component.js":"8Glio","./components/glow.component.js":"cMuKO","./components/sliders.component.js":"iW5n2","./components/popups.component.js":"5rHsd","./components/header.component.js":"7ynrW","./components/contacts.component.js":"03QD1","./components/hero.component.js":"7sPwr"}],"bDUTE":[function(require,module,exports) {
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 const vhUtils = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
@@ -13059,6 +13060,21 @@ if (contactForm) (0, _gsapDefault.default).timeline({
     background: b2
 })).play(0);
 
-},{"gsap":"k3DGt","@parcel/transformer-js/src/esmodule-helpers.js":"6elpC"}]},["6yMdq","1SICI"], "1SICI", "parcelRequire54eb")
+},{"gsap":"k3DGt","@parcel/transformer-js/src/esmodule-helpers.js":"6elpC"}],"7sPwr":[function(require,module,exports) {
+const heroSection = document.querySelector(".hero-section");
+if (heroSection) {
+    const hero = document.querySelector(".hero");
+    const setPaddingByAspectRation = ()=>{
+        const heroSectionHeight = heroSection.offsetHeight;
+        const heroSectionWidth = heroSection.offsetWidth;
+        const aspectRatio = heroSectionWidth / heroSectionHeight;
+        console.log(aspectRatio);
+        hero.setAttribute("style", `--padding-top: ${heroSectionHeight * 0.2 / aspectRatio}px`);
+    };
+    setPaddingByAspectRation();
+    window.addEventListener("resize", setPaddingByAspectRation);
+}
+
+},{}]},["6yMdq","1SICI"], "1SICI", "parcelRequire54eb")
 
 //# sourceMappingURL=scripts.18dbc454.js.map

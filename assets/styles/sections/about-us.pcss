@@ -1,6 +1,6 @@
 .section-about-us {
-  padding-top: 225px;
-  padding-bottom: 355px;
+  padding-top: ac(225px, 115px);
+  padding-bottom: ac(355px, 100px);
 
   &::before {
     content: '';
@@ -24,7 +24,12 @@
 .about-us {
   display: flex;
   justify-content: space-between;
-  gap: 100px;
+  gap: ac(100px, 23px);
+
+  @mixin media 1024 {
+    flex-direction: column;
+    gap: ac(50px, 23px);
+  }
 }
 
 .about-us__content {
@@ -34,7 +39,7 @@
 .about-us__text {
   color: rgba(255, 255, 255, 0.7);
 
-  font-size: 20px;
+  font-size: ac(20px, 14px);
   line-height: 1.219;
   text-align: justify;
 }
@@ -42,33 +47,35 @@
 .about-us__counters {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: ac(30px, 12px);
+  width: 50%;
 }
 
 .about-us__counter {
   display: flex;
   justify-content: space-between;
+
   &:not(:last-child) {
-    padding-bottom: 30px;
+    padding-bottom: ac(30px, 12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
 
 .about-us__counter-content {
-  min-width: 523px;
+  min-width: ac(523px, 300px);
 }
 
 .about-us__counter-value {
   margin-bottom: 8px;
 
   font-family: var(--font-title);
-  font-size: 96px;
+  font-size: ac(96px, 48px, 1280);
   font-weight: 400;
   line-height: 1;
 
   .count-up {
     font-family: var(--font-title);
-    font-size: 96px;
+    font-size: ac(96px, 48px, 1280);
     font-weight: 400;
     line-height: 1;
   }
@@ -76,7 +83,7 @@
   .plus {
     font-family: var(--font-main);
     font-weight: 600;
-    font-size: 80px;
+    font-size: ac(80px, 48px, 1280);
     line-height: 96px;
   }
 }
@@ -84,14 +91,14 @@
 .about-us__counter-text {
   color: rgba(255, 255, 255, 0.7);
 
-  font-size: 20px;
+  font-size: ac(20px, 14px);
   line-height: 1.219;
 }
 
 .about-us__counter-num {
   color: rgba(255, 255, 255, 0.2);
 
-  font-size: 20px;
+  font-size: ac(20px, 14px);
   line-height: 1.219;
   letter-spacing: 3px;
 }

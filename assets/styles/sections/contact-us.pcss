@@ -1,7 +1,7 @@
 .contact-form {
   position: relative;
 
-  padding: 80px;
+  padding: ac(80px, 32px) ac(80px, 24px);
   border-radius: 36px;
 
   background: linear-gradient(
@@ -15,7 +15,7 @@
   &::before {
     content: '';
     position: absolute;
-    inset: 2px;
+    inset: ac(2px, 1px, 1280);
     background: linear-gradient(
       180deg,
       rgba(22, 24, 27, 1) 0%,
@@ -36,18 +36,18 @@
 }
 
 .contact-us-section__title {
-  width: fit-content;
   margin-bottom: 8px;
 
+  font-size: ac(125px, 48px);
   text-align: center;
 }
 
 .contact-us_description {
-  margin-bottom: 60px;
+  margin-bottom: ac(60px, 24px);
 
   color: rgba(255, 255, 255, 0.7);
 
-  font-size: 20px;
+  font-size: ac(20px, 15px);
   line-height: 1.219;
   text-align: center;
 }
@@ -55,9 +55,13 @@
 .contact-form__row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  gap: ac(20px, 12px);
 
-  margin-bottom: 60px;
+  margin-bottom: ac(60px, 32px);
+
+  @mixin media 769 {
+    grid-template-columns: 1fr;
+  }
 }
 
 .contact-form__btn {

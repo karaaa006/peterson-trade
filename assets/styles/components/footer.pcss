@@ -1,22 +1,47 @@
 .footer {
-  padding-top: 150px;
-  padding-bottom: 50px;
+  padding-top: ac(150px, 15px);
+  padding-bottom: ac(50px, 32px);
 }
 
 .footer__nav-wrap {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr auto 1fr;
+  gap: 10px;
 
   margin-bottom: 40px;
+
+  @mixin media 1025 {
+    grid-template-columns: 1fr;
+  }
+
+  @mixin media 451 {
+    gap: 20px;
+  }
 }
 
 .footer__nav {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: ac(50px, 20px, 1440);
 
   &:last-child {
     justify-self: end;
+
+    @mixin media 1025 {
+      justify-self: center;
+    }
+  }
+
+  &:first-child {
+    @mixin media 1025 {
+      justify-self: center;
+      grid-row: 2;
+    }
+  }
+
+  @mixin media 451 {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -24,18 +49,30 @@
   display: flex;
   align-items: center;
   gap: 16px;
+
+  @mixin media 1025 {
+    display: none;
+  }
 }
 
 .footer__logo {
   width: 100%;
   max-width: 115px;
   justify-self: center;
+
+  img {
+    width: 100%;
+  }
+
+  @mixin media 769 {
+    margin-bottom: 24px;
+  }
 }
 
 .footer__nav-item {
   color: rgba(255, 255, 255, 0.7);
 
-  font-size: 20px;
+  font-size: ac(20px, 16px, 1440);
   line-height: 1.219;
 
   transition: color 0.3s;
@@ -75,7 +112,7 @@
 }
 
 .footer__phone {
-  margin: 0 auto 20px;
+  margin: 0 auto ac(20px, 12px);
 
   color: var(--cl-white);
 
@@ -84,20 +121,35 @@
   &:hover {
     color: var(--cl-green);
   }
+
+  @mixin media 451 {
+    font-size: 20px;
+  }
 }
 
 .footer__address-wrap {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr auto 1fr;
 
-  font-size: 20px;
+  font-size: ac(20px, 14px);
   line-height: 1.219;
+
+  @mixin media 1025 {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 }
 
 .footer__address {
   justify-self: center;
 
   color: rgba(255, 255, 255, 0.7);
+
+  text-align: center;
+
+  @mixin media 769 {
+    margin-bottom: 28px;
+  }
 }
 
 .footer__credentials-link {
@@ -109,7 +161,22 @@
     color: var(--cl-green);
   }
 
+  @mixin media 1025 {
+    text-decoration: underline;
+  }
+
   &:last-child {
     justify-self: end;
+
+    @mixin media 1025 {
+      justify-self: center;
+    }
+  }
+
+  &:first-child {
+    @mixin media 1025 {
+      grid-row: 3;
+      justify-self: center;
+    }
   }
 }
