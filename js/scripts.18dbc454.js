@@ -595,6 +595,18 @@ var _popupsComponentJs = require("./components/popups.component.js");
 var _headerComponentJs = require("./components/header.component.js");
 var _contactsComponentJs = require("./components/contacts.component.js");
 var _heroComponentJs = require("./components/hero.component.js");
+const contactForm = document.querySelector(".contact-form");
+if (contactForm) {
+    const submitBtn = contactForm.querySelector("#submit-contact-us");
+    const nameInput = contactForm.querySelector("#name");
+    const phoneInput = contactForm.querySelector("#phone");
+    submitBtn.addEventListener("click", (e)=>{
+        e.preventDefault();
+        const name = nameInput.value;
+        const phone = phoneInput.value;
+        console.log(name, phone);
+    });
+}
 
 },{"./utils/vh.utils.js":"bDUTE","./libs/countUp.lib.js":"alcAw","./components/uploadFile.component.js":"9HI75","./components/inputs.component.js":"iOnyx","./components/achievements.component.js":"8Glio","./components/glow.component.js":"cMuKO","./components/sliders.component.js":"iW5n2","./components/popups.component.js":"5rHsd","./components/header.component.js":"7ynrW","./components/contacts.component.js":"03QD1","./components/hero.component.js":"7sPwr"}],"bDUTE":[function(require,module,exports) {
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
@@ -8893,8 +8905,6 @@ let pointer = {
 };
 const handleMouseMove = (event)=>{
     const scalpingSectionRect = scalpingSection.getBoundingClientRect();
-    // console.dir(scalpingSectionRect);
-    console.log(scalpingSectionRect.top + scalpingSectionRect.height - event.clientY);
     if (event.clientY - scalpingSectionRect.top <= 300) (0, _gsapDefault.default).to("line", {
         opacity: 0,
         y: 300
@@ -12979,22 +12989,18 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _swiper = require("swiper");
 var _swiperDefault = parcelHelpers.interopDefault(_swiper);
 const scalpingPopupSlider = document.querySelector(".scalping-videos-slider");
-console.log(scalpingPopupSlider);
-if (scalpingPopupSlider) {
-    const scalpingPopupSwiper = new (0, _swiperDefault.default)(scalpingPopupSlider, {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        loop: true,
-        navigation: {
-            nextEl: ".scalping-videos-slider__nav-btn.next",
-            prevEl: ".scalping-videos-slider__nav-btn.prev"
-        },
-        modules: [
-            (0, _swiper.Navigation)
-        ]
-    });
-    console.log(scalpingPopupSwiper);
-}
+if (scalpingPopupSlider) new (0, _swiperDefault.default)(scalpingPopupSlider, {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    navigation: {
+        nextEl: ".scalping-videos-slider__nav-btn.next",
+        prevEl: ".scalping-videos-slider__nav-btn.prev"
+    },
+    modules: [
+        (0, _swiper.Navigation)
+    ]
+});
 
 },{"swiper":"8vEgr","@parcel/transformer-js/src/esmodule-helpers.js":"6elpC"}],"5rHsd":[function(require,module,exports) {
 const scalpingPopup = document.querySelector("#scalping-popup");
@@ -13045,7 +13051,6 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _gsap = require("gsap");
 var _gsapDefault = parcelHelpers.interopDefault(_gsap);
 const contactForm = document.querySelector(".contact-form");
-console.log("contactForm", contactForm);
 let b1 = "linear-gradient(216deg, #ffffff 25.97%, rgba(255, 255, 255, 0) 36.63%, rgba(255, 255, 255, 0) 67.82%, #ffffff 78.13%)";
 let b2 = "linear-gradient(144deg, #ffffff 25.97%, rgba(255, 255, 255, 0) 36.63%, rgba(255, 255, 255, 0) 67.82%, #ffffff 78.13%)";
 if (contactForm) (0, _gsapDefault.default).timeline({
@@ -13068,7 +13073,6 @@ if (heroSection) {
         const heroSectionHeight = heroSection.offsetHeight;
         const heroSectionWidth = heroSection.offsetWidth;
         const aspectRatio = heroSectionWidth / heroSectionHeight;
-        console.log(aspectRatio);
         hero.setAttribute("style", `--padding-top: ${heroSectionHeight * 0.2 / aspectRatio}px`);
     };
     setPaddingByAspectRation();

@@ -14,10 +14,6 @@ let pointer = {
 const handleMouseMove = (event) => {
   const scalpingSectionRect = scalpingSection.getBoundingClientRect();
 
-  // console.dir(scalpingSectionRect);
-  console.log(
-    scalpingSectionRect.top + scalpingSectionRect.height - event.clientY
-  );
   if (event.clientY - scalpingSectionRect.top <= 300) {
     gsap.to('line', { opacity: 0, y: 300 });
   } else if (
