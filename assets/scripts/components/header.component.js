@@ -1,10 +1,24 @@
+const header = document.querySelector('.header');
 const dropMenu = document.querySelector('.header__drop-menu');
-const burger = document.querySelector('.header__burger');
+const deskBurger = document.querySelector('#desk-burger');
+const mobBurger = document.querySelector('#mob-burger');
+const mobMenu = document.querySelector('.header__mob-menu');
 
-if (burger && dropMenu) {
-  burger.addEventListener('click', () => {
+let headerHeight = header.offsetHeight;
+
+header.style.setProperty('--header-height', `${headerHeight}px`);
+
+if (deskBurger && dropMenu) {
+  deskBurger.addEventListener('click', () => {
     dropMenu.classList.toggle('active');
-    burger.classList.toggle('active');
+    deskBurger.classList.toggle('active');
+  });
+}
+
+if (mobBurger && mobMenu) {
+  mobBurger.addEventListener('click', () => {
+    mobMenu.classList.toggle('active');
+    mobBurger.classList.toggle('active');
   });
 }
 
@@ -22,13 +36,19 @@ window.addEventListener('click', (event) => {
     !event.target.closest('.header__drop-menu')
   ) {
     dropMenu.classList.remove('active');
-    burger.classList.remove('active');
+    deskBurger.classList.remove('active');
   }
 });
 
-const langSelector = document.querySelector('.lang-selector');
+window.addEventListener('resize', () => {
+  headerHeight = header.offsetHeight;
 
-if (langSelector) {
+  header.style.setProperty('--header-height', `${headerHeight}px`);
+});
+
+const langSelectors = document.querySelectorAll('.lang-selector');
+
+langSelectors.forEach((langSelector) => {
   langSelector.addEventListener('click', () => {
     langSelector.classList.toggle('active');
   });
@@ -38,4 +58,4 @@ if (langSelector) {
       langSelector.classList.remove('active');
     }
   });
-}
+});

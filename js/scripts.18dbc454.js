@@ -826,58 +826,79 @@ autosizeTextarea();
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _swiper = require("swiper");
 var _swiperDefault = parcelHelpers.interopDefault(_swiper);
-const tabBtnsArray = document.querySelectorAll(".achievements__tabs-nav-item");
-const tabBtns = [
-    ...tabBtnsArray
-].reduce((acc, btn)=>{
-    acc[btn.dataset.tabId] = btn;
-    return acc;
-}, {});
-let currentTabId = document.querySelector(".achievements__tabs-nav-item.active").dataset.tabId;
-const screenshotNavButnPrev = document.querySelector(".achievements__slider-nav-btn.prev");
-const screenshotNavButnNext = document.querySelector(".achievements__slider-nav-btn.next");
-const tabSwiper = new (0, _swiperDefault.default)(".achievements__tab-slider", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    effect: "fade",
-    allowTouchMove: false,
-    fadeEffect: {
-        crossFade: true
-    },
-    modules: [
-        (0, _swiper.EffectFade)
-    ]
-});
-const screenshotSwiperArray = new (0, _swiperDefault.default)(".achievements__screenshot-slider", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    rewind: true
-});
-const screenshotSwipers = screenshotSwiperArray.reduce((acc, swiper)=>{
-    const { tabId } = swiper.el.closest(".achievements__bottom").dataset;
-    acc[tabId] = swiper;
-    return acc;
-}, {});
-screenshotNavButnPrev.addEventListener("click", ()=>{
-    screenshotSwipers[currentTabId].slidePrev();
-});
-screenshotNavButnNext.addEventListener("click", ()=>{
-    screenshotSwipers[currentTabId].slideNext();
-});
-const setActiveTab = (tab)=>{
-    const tabToActivate = tabBtns[tab];
-    const activeTab = tabBtns[currentTabId];
-    activeTab.classList.remove("active");
-    tabToActivate.classList.add("active");
-    tabSwiper.slideTo(tab);
-    currentTabId = tab;
-};
-Object.values(tabBtns).forEach((btn)=>{
-    const { tabId } = btn.dataset;
-    btn.addEventListener("click", ()=>{
-        setActiveTab(tabId);
+const achievementsSection = document.querySelector(".achievements-section");
+if (achievementsSection) {
+    const tabBtnsArray = document.querySelectorAll(".achievements__tabs-nav-item");
+    const tabBtns = [
+        ...tabBtnsArray
+    ].reduce((acc, btn)=>{
+        acc[btn.dataset.tabId] = btn;
+        return acc;
+    }, {});
+    let currentTabId = document.querySelector(".achievements__tabs-nav-item.active").dataset.tabId;
+    const screenshotNavButnPrev = document.querySelector(".achievements__slider-nav-btn.prev");
+    const screenshotNavButnNext = document.querySelector(".achievements__slider-nav-btn.next");
+    const tabSwiper = new (0, _swiperDefault.default)(".achievements__tab-slider", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        effect: "fade",
+        allowTouchMove: false,
+        autoHeight: true,
+        fadeEffect: {
+            crossFade: true
+        },
+        modules: [
+            (0, _swiper.EffectFade)
+        ]
     });
-});
+    const tabScreenshotSwiperArray = document.querySelectorAll(".achievements__screenshot-slider");
+    const screenshotSwiperArray = [];
+    tabScreenshotSwiperArray.forEach((el)=>{
+        const swiper = new (0, _swiperDefault.default)(el, {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            rewind: true,
+            pagination: {
+                type: "bullets",
+                el: el.querySelector(".achievements__screenshot-slider-bullets")
+            },
+            navigation: {
+                nextEl: el.querySelector(".achievements__screenshot-slider-nav-btn.next"),
+                prevEl: el.querySelector(".achievements__screenshot-slider-nav-btn.prev")
+            },
+            modules: [
+                (0, _swiper.Pagination),
+                (0, _swiper.Navigation)
+            ]
+        });
+        screenshotSwiperArray.push(swiper);
+    });
+    const screenshotSwipers = screenshotSwiperArray.reduce((acc, swiper)=>{
+        const { tabId } = swiper.el.closest(".achievements__bottom").dataset;
+        acc[tabId] = swiper;
+        return acc;
+    }, {});
+    screenshotNavButnPrev.addEventListener("click", ()=>{
+        screenshotSwipers[currentTabId].slidePrev();
+    });
+    screenshotNavButnNext.addEventListener("click", ()=>{
+        screenshotSwipers[currentTabId].slideNext();
+    });
+    const setActiveTab = (tab)=>{
+        const tabToActivate = tabBtns[tab];
+        const activeTab = tabBtns[currentTabId];
+        activeTab.classList.remove("active");
+        tabToActivate.classList.add("active");
+        tabSwiper.slideTo(tab);
+        currentTabId = tab;
+    };
+    Object.values(tabBtns).forEach((btn)=>{
+        const { tabId } = btn.dataset;
+        btn.addEventListener("click", ()=>{
+            setActiveTab(tabId);
+        });
+    });
+}
 
 },{"swiper":"8vEgr","@parcel/transformer-js/src/esmodule-helpers.js":"6elpC"}],"8vEgr":[function(require,module,exports) {
 /**
@@ -13020,11 +13041,20 @@ if (scalpingPopup) {
 }
 
 },{}],"7ynrW":[function(require,module,exports) {
+const header = document.querySelector(".header");
 const dropMenu = document.querySelector(".header__drop-menu");
-const burger = document.querySelector(".header__burger");
-if (burger && dropMenu) burger.addEventListener("click", ()=>{
+const deskBurger = document.querySelector("#desk-burger");
+const mobBurger = document.querySelector("#mob-burger");
+const mobMenu = document.querySelector(".header__mob-menu");
+let headerHeight = header.offsetHeight;
+header.style.setProperty("--header-height", `${headerHeight}px`);
+if (deskBurger && dropMenu) deskBurger.addEventListener("click", ()=>{
     dropMenu.classList.toggle("active");
-    burger.classList.toggle("active");
+    deskBurger.classList.toggle("active");
+});
+if (mobBurger && mobMenu) mobBurger.addEventListener("click", ()=>{
+    mobMenu.classList.toggle("active");
+    mobBurger.classList.toggle("active");
 });
 window.addEventListener("scroll", ()=>{
     if (window.scrollY > 0) document.querySelector(".header").classList.add("scroll");
@@ -13033,18 +13063,22 @@ window.addEventListener("scroll", ()=>{
 window.addEventListener("click", (event)=>{
     if (!event.target.closest(".header__burger") && !event.target.closest(".header__drop-menu")) {
         dropMenu.classList.remove("active");
-        burger.classList.remove("active");
+        deskBurger.classList.remove("active");
     }
 });
-const langSelector = document.querySelector(".lang-selector");
-if (langSelector) {
+window.addEventListener("resize", ()=>{
+    headerHeight = header.offsetHeight;
+    header.style.setProperty("--header-height", `${headerHeight}px`);
+});
+const langSelectors = document.querySelectorAll(".lang-selector");
+langSelectors.forEach((langSelector)=>{
     langSelector.addEventListener("click", ()=>{
         langSelector.classList.toggle("active");
     });
     window.addEventListener("click", (event)=>{
         if (!event.target.closest(".lang-selector")) langSelector.classList.remove("active");
     });
-}
+});
 
 },{}],"03QD1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

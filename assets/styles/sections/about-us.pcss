@@ -11,12 +11,17 @@
     z-index: -1;
 
     aspect-ratio: 1920 / 671;
+    min-width: 926px;
 
     background: url('../../assets/images/wave-bg.webp') no-repeat center center;
     background-size: cover;
 
     @mixin min-media 1920 {
       bottom: -350px;
+    }
+
+    @mixin media 769 {
+      left: -150px;
     }
   }
 }
