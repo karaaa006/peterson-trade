@@ -56,7 +56,7 @@
         </div>
 
         <div class="header__drop-menu-wrap">
-          <button class="header__burger">
+          <button id="desk-burger"  class="header__burger">
             <span></span>
             <span></span>
             <span></span>
@@ -89,6 +89,71 @@
             </a>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="header__content-mob">
+      <div class="lang-selector">
+        <button class="lang-selector__selected">UA</button>
+        <div class="lang-selector__dropdown">
+          <a href="#" class="lang-selector__dropdown-item">ENG</a>
+          <a href="#" class="lang-selector__dropdown-item">RU</a>
+        </div>
+      </div>
+
+      <a href="/" class="header__logo-link">
+        <img
+          src="assets/images/logo.svg"
+          alt="Peterson trage"
+          class="header__logo"
+        />
+      </a>
+
+      <button id="mob-burger" class="header__burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="header__mob-menu">
+        <a href="#about-us" class="header__mob-menu-link">Про нас</a>
+        <a href="#achievements" class="header__mob-menu-link">Досягнення</a>
+        <a href="#scalping" class="header__mob-menu-link">Scalping</a>
+        <a href="#projects" class="header__mob-menu-link">Навчання</a>
+        <a href="#projects" class="header__mob-menu-link">Ком'юніті</a>
+        <a href="#blog" class="header__mob-menu-link">Блог</a>
+        <a href="#contact-us" class="header__mob-menu-link">Контакти</a>
+
+        <div class="header__socials-wrap">
+          <a href="#" class="header__socials-item">
+            <include
+              src="./html/components/icon.html"
+              locals='{
+                    "class": "header__socials-icon",
+                    "icon": "ig-v2",
+                    "size": "24"
+                }'
+            ></include>
+          </a>
+          <a href="#" class="header__socials-item">
+            <include
+              src="./html/components/icon.html"
+              locals='{
+                    "class": "header__socials-icon",
+                    "icon": "yt-v2",
+                    "size": "24"
+                }'
+            ></include>
+          </a>
+          <a href="#" class="header__socials-item">
+            <include
+              src="./html/components/icon.html"
+              locals='{
+                    "class": "header__socials-icon",
+                    "icon": "tg-v2",
+                    "size": "24"
+                }'
+            ></include>
+          </a>
       </div>
     </div>
   </div>
