@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 
 const contactForm = document.querySelector('.contact-form');
-console.log('contactForm', contactForm);
+
 let b1 =
   'linear-gradient(216deg, #ffffff 25.97%, rgba(255, 255, 255, 0) 36.63%, rgba(255, 255, 255, 0) 67.82%, #ffffff 78.13%)';
 let b2 =
