@@ -3147,19 +3147,79 @@ body::-webkit-scrollbar-thumb {
   line-height: 1.219;
 }
 
-.reviews__phone-wrap {
-  width: fit-content;
+.reviews {
+  min-height: 1100px;
+  padding-top: 285px;
   position: relative;
+}
+
+.reviews__phone-wrap {
+  width: 100%;
+  max-width: 555px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .reviews__phone-wrap:before {
   content: "";
   z-index: -1;
-  filter: blur(500px);
+  filter: blur(110px);
   opacity: .5;
   background: #ffffff26;
   border-radius: 50%;
+  width: 706px;
+  height: 910px;
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.reviews__wrap {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 330px;
+  height: 628px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.review {
+  backdrop-filter: blur(10px);
+  background: #001e0e80;
+  border: 1px solid #2af895;
+  border-radius: 16px 16px 16px 0;
+  padding: 23px 25px;
+  position: relative;
+}
+
+.review__name {
+  margin-bottom: 4px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.review__text {
+  color: #fffc;
+  letter-spacing: .1em;
+  margin-bottom: 8px;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.review__reactions {
+  color: var(--cl-white);
+  background: #ffffff1a;
+  border-radius: 999px;
+  width: fit-content;
+  padding: 6px 10px;
+  font-size: 14px;
 }
 /*# sourceMappingURL=styles.c68e93a6.css.map */
