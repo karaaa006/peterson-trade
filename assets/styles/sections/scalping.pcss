@@ -11,13 +11,17 @@
 .scalping__text {
   max-width: 1412px;
 
-  margin: 0 auto 95px;
+  margin: 0 auto ac(95px, 30px);
 
   color: rgba(255, 255, 255, 0.7);
 
   font-size: ac(20px, 14px);
   line-height: 1.219;
   text-align: center;
+
+  @mixin media 501 {
+    text-align: justify;
+  }
 }
 
 .scalping__video-wrap {

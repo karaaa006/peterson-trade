@@ -10,6 +10,19 @@
   /* @mixin min-media 1920 {
     background-size: 1920px auto;
   } */
+
+  @mixin media 551 {
+    background: linear-gradient(
+      180deg,
+      #080a0b 0%,
+      #090a0c 33.11%,
+      #08090a 57.14%,
+      #0d0f12 75.44%,
+      #0e1114 100%
+    );
+
+    padding-bottom: 45px;
+  }
 }
 
 .hero-section__bg-wrap {
@@ -30,6 +43,18 @@
 
   @mixin min-media 1920 {
     mask-image: radial-gradient(black 60%, transparent 80%);
+  }
+
+  @mixin media 551 {
+    z-index: 0;
+    max-height: 574px;
+
+    mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      black 90%,
+      transparent 95%
+    );
   }
 }
 
@@ -116,6 +141,10 @@
 
   gap: ac(75px, 5px);
   margin-top: 4px;
+
+  @mixin media 376 {
+    flex-wrap: wrap;
+  }
 }
 
 .hero__list-item {
@@ -125,6 +154,10 @@
   font-weight: 300;
   letter-spacing: 4px;
   text-transform: uppercase;
+
+  @mixin media 451 {
+    letter-spacing: 0.2em;
+  }
 }
 
 .hero__partner-list {
@@ -204,7 +237,7 @@
 }
 
 .hero__additional-info {
-  margin-top: 36px;
+  margin-top: ac(36px, 13px);
 
   color: rgba(255, 255, 255, 0.5);
 

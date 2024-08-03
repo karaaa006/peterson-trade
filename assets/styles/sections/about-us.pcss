@@ -54,6 +54,11 @@
   flex-direction: column;
   gap: ac(30px, 12px);
   width: 50%;
+
+  @mixin media 1025 {
+    width: 100%;
+    max-width: 500px;
+  }
 }
 
 .about-us__counter {

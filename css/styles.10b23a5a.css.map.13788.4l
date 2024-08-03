@@ -1,1 +1,0 @@
-{"mappings":"AAAA","sources":["node_modules/.pnpm/loading-attribute-polyfill@2.1.1/node_modules/loading-attribute-polyfill/dist/loading-attribute-polyfill.css"],"sourcesContent":["img[data-lazy-src] {\n\twill-change: contents;\n}\n"],"names":[],"version":3,"file":"styles.10b23a5a.css.map","sourceRoot":"/__parcel_source_root/"}
