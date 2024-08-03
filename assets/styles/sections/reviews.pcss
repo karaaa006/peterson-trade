@@ -1,0 +1,18 @@
+.reviews__phone-wrap {
+  position: relative;
+
+  width: fit-content;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    filter: blur(500px);
+    opacity: 0.5;
+
+    border-radius: 50%;
+
+    background: #ffffff26;
+  }
+}

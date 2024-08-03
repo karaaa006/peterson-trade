@@ -8917,68 +8917,70 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _gsap = require("gsap");
 var _gsapDefault = parcelHelpers.interopDefault(_gsap);
 const scalpingSection = document.querySelector("#scalping");
-let svgns = "http://www.w3.org/2000/svg";
-let root = document.querySelector(".glow-svg");
-let ease = 0.75;
-let pointer = {
-    x: window.innerWidth / 2,
-    y: window.innerHeight / 2
-};
-const handleMouseMove = (event)=>{
-    const scalpingSectionRect = scalpingSection.getBoundingClientRect();
-    if (event.clientY - scalpingSectionRect.top <= 300) (0, _gsapDefault.default).to("line", {
-        opacity: 0,
-        y: 300
-    });
-    else if (scalpingSectionRect.top + scalpingSectionRect.height - event.clientY <= 300) (0, _gsapDefault.default).to("line", {
-        opacity: 0,
-        y: scalpingSectionRect.height - 300
-    });
-    else (0, _gsapDefault.default).to("line", {
-        opacity: 1
-    });
-    pointer.x = event.clientX - scalpingSectionRect.left;
-    pointer.y = event.clientY - scalpingSectionRect.top;
-};
-scalpingSection.addEventListener("mousemove", handleMouseMove);
-let leader = (prop)=>{
-    return prop === "x" ? pointer.x : pointer.y;
-};
-let total = 150;
-for(let i = 0; i < total; i++)leader = createLine(leader, i);
-function createLine(leader, i) {
-    let line = document.createElementNS(svgns, "line");
-    root.appendChild(line);
-    (0, _gsapDefault.default).set(line, {
-        x: -15,
-        y: -15,
-        opacity: (total - i) / total
-    });
-    let pos = (0, _gsapDefault.default).getProperty(line);
-    (0, _gsapDefault.default).to(line, {
-        duration: 0.1,
-        x: "+=1",
-        y: "+=1",
-        repeat: -1,
-        ease: "none",
-        modifiers: {
-            x: ()=>{
-                let posX = pos("x");
-                let leaderX = leader("x");
-                let x = posX + (leaderX - posX) * ease;
-                line.setAttribute("x2", leaderX - x);
-                return x;
-            },
-            y: ()=>{
-                let posY = pos("y");
-                let leaderY = leader("y");
-                let y = posY + (leaderY - posY) * ease;
-                line.setAttribute("y2", leaderY - y);
-                return y;
+if (scalpingSection) {
+    let svgns = "http://www.w3.org/2000/svg";
+    let root = document.querySelector(".glow-svg");
+    let ease = 0.75;
+    let pointer = {
+        x: window.innerWidth / 2,
+        y: window.innerHeight / 2
+    };
+    const handleMouseMove = (event)=>{
+        const scalpingSectionRect = scalpingSection.getBoundingClientRect();
+        if (event.clientY - scalpingSectionRect.top <= 300) (0, _gsapDefault.default).to("line", {
+            opacity: 0,
+            y: 300
+        });
+        else if (scalpingSectionRect.top + scalpingSectionRect.height - event.clientY <= 300) (0, _gsapDefault.default).to("line", {
+            opacity: 0,
+            y: scalpingSectionRect.height - 300
+        });
+        else (0, _gsapDefault.default).to("line", {
+            opacity: 1
+        });
+        pointer.x = event.clientX - scalpingSectionRect.left;
+        pointer.y = event.clientY - scalpingSectionRect.top;
+    };
+    scalpingSection.addEventListener("mousemove", handleMouseMove);
+    let leader = (prop)=>{
+        return prop === "x" ? pointer.x : pointer.y;
+    };
+    let total = 150;
+    for(let i = 0; i < total; i++)leader = createLine(leader, i);
+    const createLine = (leader, i)=>{
+        let line = document.createElementNS(svgns, "line");
+        root.appendChild(line);
+        (0, _gsapDefault.default).set(line, {
+            x: -15,
+            y: -15,
+            opacity: (total - i) / total
+        });
+        let pos = (0, _gsapDefault.default).getProperty(line);
+        (0, _gsapDefault.default).to(line, {
+            duration: 0.1,
+            x: "+=1",
+            y: "+=1",
+            repeat: -1,
+            ease: "none",
+            modifiers: {
+                x: ()=>{
+                    let posX = pos("x");
+                    let leaderX = leader("x");
+                    let x = posX + (leaderX - posX) * ease;
+                    line.setAttribute("x2", leaderX - x);
+                    return x;
+                },
+                y: ()=>{
+                    let posY = pos("y");
+                    let leaderY = leader("y");
+                    let y = posY + (leaderY - posY) * ease;
+                    line.setAttribute("y2", leaderY - y);
+                    return y;
+                }
             }
-        }
-    });
-    return pos;
+        });
+        return pos;
+    };
 }
 
 },{"gsap":"k3DGt","@parcel/transformer-js/src/esmodule-helpers.js":"6elpC"}],"k3DGt":[function(require,module,exports) {
