@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <include
+    src="./layout/html-top.html"
+    locals='{
+        "title": "Навчання"
+    }'
+  ></include>
+
+  <body>
+    <div id="site">
+      <!-- <include src="./html/popups/popup.html"></include> -->
+      <include src="./layout/header.html"></include>
+
+      <main class="main" id="content">
+        <include src="./html/sections/university-hero.html"></include>
+        <include src="./html/sections/instruments.html"></include>
+        <include src="./html/sections/presentation.html"></include>
+        <include src="./html/sections/tariffs.html"></include>
+        <include src="./html/sections/reviews.html"></include>
+
+        <include src="./html/sections/contact-us.html"></include>
+      </main>
+
+      <include src="./layout/footer.html"></include>
+    </div>
+
+    <include src="./layout/links/scripts.html"></include>
+  </body>
+</html>
