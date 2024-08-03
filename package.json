@@ -73,8 +73,7 @@
     "build": "parcel build ./src/*.html --public-url ./ --no-cache",
     "serve": "npm run clean:output && parcel serve ./src/*.html ./src/styles/.output/style.css --no-cache",
     "styles": "gulp dev",
-    "gh-deploy": "gh-pages -d dist",
-    "precommit": "pnpm build && pnpm run gh-deploy"
+    "gh-deploy": "pnpm build && gh-pages -d dist"
   },
   "devDependencies": {
     "@parcel/compressor-brotli": "^2.9.3",

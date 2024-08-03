@@ -23,6 +23,11 @@
     .header__drop-menu-link {
       background-color: rgba(0, 0, 0, 0.8);
     }
+
+    @mixin media 651 {
+      background: rgba(0, 0, 0, 1);
+      padding: 4px 0 20px 0;
+    }
   }
 
   @mixin media 651 {
@@ -375,7 +380,7 @@
 
 .header__mob-menu {
   position: absolute;
-  top: calc(var(--header-height) - 1px);
+  top: calc(var(--header-height) - 3px);
   left: 0;
   bottom: 0;
   right: 0;
@@ -385,7 +390,7 @@
   flex-direction: column;
   gap: 40px;
   padding: 52px 0px 44px;
-  height: calc(100vh - var(--header-height) - 1px);
+  height: calc(100vh - var(--header-height) - 3px);
 
   background: rgba(0, 0, 0, 1);
   z-index: 998;
