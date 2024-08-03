@@ -3822,25 +3822,102 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 
-.reviews__phone-wrap {
+.reviews {
   position: relative;
 
-  width: -moz-fit-content;
+  min-height: 1100px;
 
-  width: fit-content;
+  padding-top: 285px;
+}
+
+.reviews__phone-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  max-width: 555px;
+
+  margin: 0 auto;
 }
 
 .reviews__phone-wrap::before {
     content: '';
     position: absolute;
-    inset: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: -1;
-    filter: blur(500px);
+    filter: blur(110px);
     opacity: 0.5;
+
+    width: 706px;
+    height: 910px;
 
     border-radius: 50%;
 
     background: #ffffff26;
   }
+
+.reviews__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 330px;
+  height: 628px;
+
+  margin: 0 auto;
+}
+
+.reviews-slider {
+}
+
+.review {
+  position: relative;
+
+  padding: 23px 25px 23px;
+  border: 1px solid #2af895;
+  border-radius: 16px 16px 16px 0px;
+
+  background: #001e0e80;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.review__name {
+  margin-bottom: 4px;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.review__text {
+  margin-bottom: 8px;
+
+  color: #ffffffcc;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+}
+
+.review__reactions {
+  width: -moz-fit-content;
+  width: fit-content;
+
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  color: var(--cl-white);
+  background: rgba(255, 255, 255, 0.1);
+
+  font-size: 14px;
+}
 
 /*# sourceMappingURL=style.css.map */
