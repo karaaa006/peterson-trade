@@ -7,10 +7,16 @@
 
   display: flex;
 
-  min-height: 1100px;
+  min-height: ac(1100px, 700px, 1024);
 
   margin-top: -70px;
-  padding-top: 190px;
+  padding-top: ac(200px, 100px, 1024);
+
+  @mixin media 1025 {
+    margin-top: -60px;
+
+    padding-top: 130px;
+  }
 }
 
 .reviews__phone-wrap {
@@ -20,9 +26,13 @@
   transform: translate(-50%, -50%);
 
   width: 100%;
-  max-width: 555px;
+  max-width: ac(555px, 400px, 1280);
 
   margin: 0 auto;
+
+  @mixin media 769 {
+    max-width: 340px;
+  }
 
   &::before {
     content: '';
@@ -60,13 +70,24 @@
   width: 100%;
 
   margin: 0 auto;
+
+  @mixin media 1025 {
+    justify-content: center;
+  }
 }
 
 .reviews-slider {
-  max-width: 1230px;
-  height: 650px;
+  max-width: ac(335px, 220px);
+  /* max-width: ac(1230px, 830px); */
+  height: ac(650px, 480px, 1440);
 
   margin-bottom: 20px;
+
+  @mixin media 769 {
+    max-width: 214px;
+    height: 400px;
+    margin-bottom: 0;
+  }
 
   .swiper-slide {
     display: flex;
@@ -93,10 +114,22 @@
   }
 }
 
+.reviews-slider__btn {
+  z-index: 2;
+
+  flex-shrink: 0;
+
+  @mixin media 1025 {
+    &:not(&.mob) {
+      display: none;
+    }
+  }
+}
+
 .review {
   position: relative;
 
-  padding: 23px 25px 23px;
+  padding: ac(23px, 12px) ac(25px, 12px) ac(23px, 12px);
   border: 1px solid #2af895;
   border-radius: 16px 16px 16px 0px;
 
@@ -110,30 +143,60 @@
   margin-bottom: 4px;
 
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: ac(14px, 12px);
   font-weight: 600;
 }
 
 .review__text {
-  margin-bottom: 8px;
+  overflow: auto;
+
+  max-height: ac(420px, 300px);
+
+  margin-bottom: ac(8px, 2px);
 
   color: #ffffffcc;
 
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: ac(16px, 12px);
   font-weight: 300;
   line-height: 1.4;
   letter-spacing: 0.1em;
+
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .review__reactions {
   width: fit-content;
 
-  padding: 6px 10px;
+  padding: ac(6px, 4px) ac(10px, 6px);
   border-radius: 999px;
 
   color: var(--cl-white);
   background: rgba(255, 255, 255, 0.1);
 
-  font-size: 14px;
+  font-size: ac(14px, 10px);
+}
+
+.review__more-btn {
+  padding: ac(20px, 12px, 1280) ac(32px, 24px, 1280);
+  border-radius: ac(12px, 8px, 1024);
+
+  .btn__text {
+    font-size: ac(20px, 12px, 1024);
+  }
+}
+
+.review__slider-nav-mob {
+  display: none;
+
+  @mixin media 1025 {
+    display: flex;
+    gap: 48px;
+
+    margin-top: 88px;
+  }
 }

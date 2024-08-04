@@ -19,9 +19,9 @@ const reviewsSlider = document.querySelector('.reviews-slider');
 
 if (reviewsSlider) {
   new Swiper(reviewsSlider, {
-    slidesPerView: 3,
+    slidesPerView: 1,
     centeredSlides: true,
-    spaceBetween: 116,
+    spaceBetween: 56,
     loop: true,
     loopAdditionalSlides: 1,
     allowTouchMove: false,
@@ -31,5 +31,19 @@ if (reviewsSlider) {
     },
     modules: [Navigation],
     initialSlide: 1,
+    breakpoints: {
+      768: {
+        spaceBetween: 50,
+      },
+      1280: {
+        spaceBetween: 55,
+      },
+      1440: {
+        spaceBetween: 60,
+      },
+      1560: {
+        spaceBetween: 116,
+      },
+    },
   });
 }

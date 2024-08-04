@@ -7,13 +7,18 @@
 .tariffs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: ac(30px, 24px);
+
+  @mixin media 901 {
+    grid-template-columns: 1fr;
+    gap: 90px;
+  }
 }
 
 .tariff {
   position: relative;
 
-  padding: 0 30px 30px;
+  padding: 0 ac(30px, 12px, 1024) ac(30px, 16px, 1024);
   border-radius: 24px;
 
   background: linear-gradient(
@@ -22,6 +27,12 @@
     rgba(153, 153, 153, 0) 17.29%,
     #ffffff 51.97%
   );
+
+  @mixin media 901 {
+    width: 100%;
+    max-width: 547px;
+    margin: 0 auto;
+  }
 
   &::before {
     content: '';
@@ -53,21 +64,24 @@
 .tariff__icon {
   display: block;
 
-  margin: -79px auto 20px;
+  width: ac(281px, 177px, 1024);
+
+  margin: -79px auto ac(20px, 8px, 1024);
 }
 
 .tariff__title {
-  margin-bottom: 38px;
+  margin-bottom: ac(38px, 8px, 1024);
 
   font-family: var(--font-title);
-  font-size: 96px;
+  font-size: ac(96px, 60px, 1024);
   line-height: 1;
   text-align: center;
 }
 
 .tariff__descr {
-  margin-bottom: 42px;
+  margin-bottom: ac(42px, 20px, 1024);
 
+  font-size: ac(20px, 14px, 1024);
   text-align: center;
 
   color: rgba(255, 255, 255, 0.7);
@@ -77,34 +91,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: ac(10px, 6px, 1024);
 
-  width: 226px;
+  width: ac(226px, 140px, 1024);
 
-  margin: 0 auto 42px;
+  margin: 0 auto ac(42px, 20px, 1024);
 
   background: rgba(255, 255, 255, 0.12);
   border-radius: 12px;
-  padding: 12px;
+  padding: ac(12px, 8px, 1024);
 }
 
 .tariff__price-value {
   font-family: var(--font-title);
-  font-size: 80px;
+  font-size: ac(80px, 50px, 1024);
   line-height: 1;
 }
 
 .tariff__price-currency {
   color: #2af895;
   font-family: var(--font-title);
-  font-size: 40px;
+  font-size: ac(40px, 24px, 1024);
   line-height: 1;
 }
 
 .tariff__program-title {
-  margin-bottom: 20px;
+  margin-bottom: ac(20px, 10px, 1024);
 
-  font-size: 20px;
+  font-size: ac(20px, 14px, 1024);
   font-weight: 600;
   line-height: 1.219;
 }
@@ -112,9 +126,9 @@
 .tariff__program-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: ac(20px, 10px, 1024);
 
-  margin-bottom: 40px;
+  margin-bottom: ac(40px, 24px, 1024);
 }
 
 .tariff__program-item {
@@ -132,7 +146,7 @@
 .tariff__program-item-main {
   display: flex;
 
-  font-size: 16px;
+  font-size: ac(16px, 14px, 1024);
   line-height: 1.219;
 
   &::before {
@@ -143,8 +157,8 @@
     display: block;
     flex-shrink: 0;
 
-    width: 17px;
-    height: 17px;
+    width: ac(17px, 13px, 1024);
+    height: ac(17px, 13px, 1024);
 
     margin-right: 10px;
 
@@ -152,20 +166,22 @@
   }
 
   &:not(:last-child) {
-    margin-bottom: 20px;
+    margin-bottom: ac(20px, 10px, 1024);
   }
 }
 
 .tariff__program-item-additional {
   color: #2af895;
+
+  font-size: ac(16px, 14px, 1024);
 }
 
 .tariff__loan-info {
-  margin-top: 12px;
+  margin-top: ac(12px, 8px, 1024);
 
   color: #ffffffb2;
 
-  font-size: 16px;
+  font-size: ac(16px, 12px, 1024);
   line-height: 1.219;
   font-style: italic;
   text-align: center;

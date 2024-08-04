@@ -4,11 +4,15 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  gap: 128px;
+  gap: ac(128px, 25px);
 
   margin: 0 auto;
 
   max-width: 1600px;
+
+  @mixin media 1025 {
+    flex-direction: column;
+  }
 }
 
 .presentation-section__bg-wrap {
@@ -49,18 +53,22 @@
 
   filter: blur(10px);
   opacity: 0.25;
+
+  @mixin media 769 {
+    filter: blur(4px);
+  }
 }
 
 .presentation__text {
-  max-width: 667px;
+  max-width: ac(667px, 500px);
 
-  font-size: 24px;
+  font-size: ac(24px, 14px);
   text-align: justify;
   line-height: 1.219;
 }
 
 .presentation__button {
-  max-width: 578px;
+  max-width: ac(578px, 253px);
 
   background: transparent;
   border: none;

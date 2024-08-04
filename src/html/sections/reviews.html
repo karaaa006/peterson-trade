@@ -12,7 +12,7 @@
       </div>
       <div class="reviews__content">
         <div class="reviews__slider-wrap">
-          <button class="arrow-btn revert reviews-slider__btn prev">
+          <button class="arrow-btn reviews-slider__btn prev">
             <include
               src="./html/components/icon.html"
               locals='{
@@ -198,7 +198,7 @@
               </div>
             </div>
           </div>
-          <button class="arrow-btn reviews-slider__btn next">
+          <button class="arrow-btn revert reviews-slider__btn next">
             <include
               src="./html/components/icon.html"
               locals='{
@@ -210,9 +210,32 @@
           </button>
         </div>
 
-        <button class="btn no-border">
+        <button class="review__more-btn btn no-border">
           <span class="btn__text">Переглянути відгуки</span>
         </button>
+
+        <div class="review__slider-nav-mob">
+          <button class="arrow-btn reviews-slider__btn mob prev">
+            <include
+              src="./html/components/icon.html"
+              locals='{
+                    "class": "arrow-btn__icon",
+                    "icon": "arrow-left",
+                    "size": "45"
+                }'
+            ></include>
+          </button>
+          <button class="arrow-btn revert reviews-slider__btn mob next">
+            <include
+              src="./html/components/icon.html"
+              locals='{
+                    "class": "arrow-btn__icon",
+                    "icon": "arrow-right",
+                    "size": "45"
+                }'
+            ></include>
+          </button>
+        </div>
       </div>
     </div>
   </div>
