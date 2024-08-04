@@ -38,11 +38,6 @@ if (scalpingSection) {
     return prop === 'x' ? pointer.x : pointer.y;
   };
 
-  let total = 150;
-  for (let i = 0; i < total; i++) {
-    leader = createLine(leader, i);
-  }
-
   const createLine = (leader, i) => {
     let line = document.createElementNS(svgns, 'line');
     root.appendChild(line);
@@ -77,4 +72,9 @@ if (scalpingSection) {
 
     return pos;
   };
+
+  let total = 150;
+  for (let i = 0; i < total; i++) {
+    leader = createLine(leader, i);
+  }
 }

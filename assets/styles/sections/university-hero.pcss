@@ -1,9 +1,16 @@
 .university-hero-section {
   overflow: hidden;
+
+  .container {
+    width: 93%;
+  }
 }
 
 .university-hero-section__decor-wrap {
   position: absolute;
+
+  opacity: 0.75;
+  mix-blend-mode: lighten;
 
   &.left {
     top: 1%;
@@ -13,6 +20,24 @@
   &.top {
     top: 0;
     left: 0;
+
+    @mixin media 551 {
+      display: none;
+    }
+
+    &.mob {
+      display: none;
+
+      @mixin media 551 {
+        display: block;
+      }
+    }
+  }
+}
+
+.university-hero {
+  @mixin media 769 {
+    display: none;
   }
 }
 
@@ -28,18 +53,22 @@
   position: relative;
 }
 
+.university-hero__dollar-wrap {
+  width: ac(452px, 250px);
+}
+
 .university-hero__dollar-text-item {
   position: absolute;
 
   width: max-content;
 
-  padding: 20px 70px;
+  padding: ac(20px, 8px) ac(70px, 19px);
   border-radius: 8px;
 
   color: #2af895;
 
   text-transform: uppercase;
-  font-size: 24px;
+  font-size: ac(24px, 12px);
   font-weight: 400;
 
   &.item-1 {
@@ -84,13 +113,17 @@
       rgba(42, 248, 149, 0.3) 0%,
       rgba(42, 248, 149, 0.02) 100%
     );
+
+    @mixin media 1280 {
+      left: -70%;
+    }
   }
 }
 
 .university-hero__why,
 .university-hero__scalping {
   font-family: var(--font-title);
-  font-size: 187px;
+  font-size: ac(187px, 48px);
   font-weight: 400;
   line-height: 0.95;
   letter-spacing: 0.4rem;
@@ -100,12 +133,12 @@
 
 .university-hero__scalping-descr {
   position: absolute;
-  top: calc(100% + 30px);
+  top: calc(100% + ac(30px, 15px));
   right: 0;
 
   max-width: 782px;
 
-  font-size: 23px;
+  font-size: ac(23px, 14px);
   font-weight: 400;
   text-align: justify;
 
@@ -114,9 +147,143 @@
 
 .university-hero__logo {
   position: absolute;
-  bottom: calc(100% + 30px);
+  bottom: calc(100% + ac(30px, 15px));
   left: 50%;
   transform: translateX(-50%);
 
-  max-width: 195px;
+  max-width: ac(195px, 107px);
+}
+
+.university-hero-mob {
+  position: relative;
+  z-index: 1;
+  display: none;
+
+  padding-top: 123px;
+
+  @mixin media 769 {
+    display: block;
+  }
+}
+
+.university-hero-mob__title {
+  letter-spacing: 0.04rem;
+}
+
+.university-hero-mob__descr {
+  max-width: 500px;
+
+  margin: 0 auto 32px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 14px;
+  line-height: 1.219;
+  text-align: justify;
+}
+
+.university-hero-mob__dollar-wrap {
+  position: relative;
+
+  max-width: ac(300px, 250px, 550, 769);
+
+  margin: 0 auto;
+
+  transform: translateX(ac(0px, -70px, 550, 769));
+
+  @mixin media 450 {
+    max-width: 200px;
+    transform: translateX(-40px);
+  }
+}
+
+.university-hero-mob__dollar-logo {
+  position: absolute;
+  top: 5%;
+  left: -20%;
+
+  width: ac(180px, 107px, 550, 769);
+
+  @mixin media 550 {
+    left: -10%;
+  }
+}
+
+.university-hero-mob__dollar-text-item {
+  position: absolute;
+
+  width: max-content;
+
+  padding: ac(14px, 8px, 550, 768) ac(26px, 12px, 550, 768);
+  border-radius: 4px;
+
+  color: #2af895;
+
+  text-transform: uppercase;
+  font-size: ac(18px, 12px, 550, 768);
+  font-weight: 400;
+
+  background: linear-gradient(
+    250deg,
+    rgba(42, 248, 149, 0.3) 0%,
+    rgba(42, 248, 149, 0.02) 100%
+  );
+
+  &.item-1 {
+    top: 13%;
+    right: -60%;
+
+    @mixin media 550 {
+      right: -40%;
+    }
+
+    @mixin media 450 {
+      right: -46%;
+    }
+  }
+
+  &.item-2 {
+    top: 24%;
+    right: -60%;
+
+    @mixin media 550 {
+      top: 22%;
+      right: -42%;
+    }
+
+    @mixin media 450 {
+      top: 23%;
+      right: -46%;
+    }
+  }
+
+  &.item-3 {
+    bottom: 15%;
+    right: -50%;
+
+    @mixin media 550 {
+      bottom: 20%;
+      right: -35%;
+    }
+
+    @mixin media 450 {
+      bottom: 20%;
+      right: -42%;
+    }
+  }
+
+  &.item-4 {
+    bottom: 4%;
+    right: -65%;
+
+    @mixin media 550 {
+      bottom: 12%;
+      right: -43%;
+    }
+
+    @mixin media 450 {
+      bottom: 10%;
+      right: -47%;
+    }
+  }
 }
