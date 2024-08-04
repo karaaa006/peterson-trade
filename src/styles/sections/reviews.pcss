@@ -1,9 +1,16 @@
+.reviews-section__title {
+  text-align: center;
+}
+
 .reviews {
   position: relative;
 
+  display: flex;
+
   min-height: 1100px;
 
-  padding-top: 285px;
+  margin-top: -70px;
+  padding-top: 190px;
 }
 
 .reviews__phone-wrap {
@@ -36,19 +43,54 @@
   }
 }
 
-.reviews__wrap {
+.reviews__content {
   display: flex;
+  align-items: center;
   flex-direction: column;
+
+  width: 100%;
+}
+
+.reviews__slider-wrap {
+  display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 30px;
 
-  max-width: 330px;
-  height: 628px;
+  width: 100%;
 
   margin: 0 auto;
 }
 
 .reviews-slider {
+  max-width: 1230px;
+  height: 650px;
+
+  margin-bottom: 20px;
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+
+    opacity: 0;
+    filter: blur(3px);
+
+    transition: all 0.2s;
+
+    &.swiper-slide-active {
+      filter: none;
+
+      .review {
+        backdrop-filter: blur(10px);
+      }
+    }
+
+    &.swiper-slide-prev,
+    &.swiper-slide-next,
+    &.swiper-slide-active {
+      opacity: 1;
+    }
+  }
 }
 
 .review {
@@ -59,7 +101,9 @@
   border-radius: 16px 16px 16px 0px;
 
   background: #001e0e80;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0px);
+
+  transition: all 0.3s 0.1s;
 }
 
 .review__name {

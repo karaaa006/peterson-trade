@@ -1,6 +1,5 @@
-import Swiper, { EffectFade } from 'swiper';
-import { Navigation } from 'swiper';
-import { Pagination } from 'swiper';
+import Swiper from 'swiper';
+import { Navigation, Pagination, EffectFade } from 'swiper/modules';
 
 const achievementsSection = document.querySelector('.achievements-section');
 
