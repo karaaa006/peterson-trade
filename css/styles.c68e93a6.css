@@ -1089,6 +1089,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: clamp(8px, .347222vw + 5.33333px, 12px);
   justify-content: center;
   align-items: center;
+  width: fit-content;
   padding: clamp(16px, .347222vw + 13.3333px, 20px) 32px;
   font-size: clamp(14px, .520833vw + 10px, 20px);
   font-weight: 600;
@@ -2343,6 +2344,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .blog-card {
+  color: var(--cl-white);
   background: #00000052;
   border: 1px solid #ffffff4d;
   border-radius: clamp(12px, 1.04167vw + 4px, 24px);
