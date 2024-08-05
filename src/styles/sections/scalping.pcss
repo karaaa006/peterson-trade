@@ -30,12 +30,24 @@
   width: 100%;
   max-width: 1477px;
 
+  aspect-ratio: 3125 / 1400;
+
   margin: 0 auto 50px;
 }
 
 .scalping__video-pc {
-  width: 100%;
-  aspect-ratio: 1477 / 787;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 100%;
+  aspect-ratio: 1477 / 787; */
+  /* width: fit-content; */
+  max-width: unset;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 3224 / 983;
 }
 
 .scalping__play-btn {

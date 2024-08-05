@@ -28,8 +28,8 @@
 
   transition: 0.5s ease;
 
-  background: #040404 url('../../assets/images/project-green-bg.jpg') no-repeat
-    top center;
+  background: #040404;
+
   background-size: contain;
 
   &:hover {
@@ -42,11 +42,14 @@
 
   &.red {
     --bg-blur-color: #520001;
-    background: #040404 url('../../assets/images/project-red-bg.jpg') no-repeat
-      top center;
 
     @mixin media 551 {
       background-size: 100%;
+    }
+
+    &::after {
+      background: url('../../assets/images/project-red-bg.jpg') no-repeat top
+        center;
     }
 
     &:hover {
@@ -58,7 +61,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    z-index: -1;
+    /* z-index: -1; */
 
     border-radius: 24px;
 
@@ -71,9 +74,24 @@
     opacity: 0;
     transition: 0.5s ease;
   }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    border-radius: 24px;
+
+    background: url('../../assets/images/project-green-bg.jpg') no-repeat top
+      center;
+  }
 }
 
 .project-card__top-wrap {
+  position: relative;
+  z-index: 2;
+
   display: flex;
   justify-content: space-between;
   gap: ac(20px, 17px, 1280);
@@ -83,6 +101,9 @@
 }
 
 .project-card__top-left {
+  position: relative;
+  z-index: 2;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -91,6 +112,9 @@
 }
 
 .project-card__logo {
+  position: relative;
+  z-index: 2;
+
   max-width: ac(231px, 97px);
   aspect-ratio: 176 / 68;
 }
@@ -111,6 +135,9 @@
 }
 
 .project-card__info {
+  position: relative;
+  z-index: 2;
+
   margin-bottom: ac(30px, 18px, 1024);
 
   color: rgba(255, 255, 255, 0.7);
