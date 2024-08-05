@@ -1242,6 +1242,10 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: center;
 
+  width: -moz-fit-content;
+
+  width: fit-content;
+
   padding: clamp(16px, calc(16px + 4.00 * ((100vw - 768px) / 1152)), 20px) 32px;
   border: none;
   border-radius: clamp(8px, calc(8px + 4.00 * ((100vw - 768px) / 1152)), 12px);
@@ -2802,10 +2806,12 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: column;
 
-  background: rgba(0, 0, 0, 0.32);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: clamp(12px, calc(12px + 12.00 * ((100vw - 768px) / 1152)), 24px);
   padding: clamp(12px, calc(12px + 8.00 * ((100vw - 768px) / 1152)), 20px);
+
+  color: var(--cl-white);
+  background: rgba(0, 0, 0, 0.32);
 
   transition: border-color 0.3s;
 }
