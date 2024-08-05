@@ -224,6 +224,7 @@ a {
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--cl-red) transparent;
+  scroll-behavior: smooth;
 }
 
 body {
