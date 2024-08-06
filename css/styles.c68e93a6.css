@@ -3884,7 +3884,7 @@ body::-webkit-scrollbar-thumb {
 
 .review__text {
   color: #fffc;
-  letter-spacing: .1em;
+  letter-spacing: .01em;
   scrollbar-width: none;
   max-height: clamp(300px, 10.4167vw + 220px, 420px);
   margin-bottom: clamp(2px, .520833vw - 2px, 8px);
