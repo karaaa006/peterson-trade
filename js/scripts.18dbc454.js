@@ -13161,11 +13161,11 @@ if (contactForm) {
             const name = nameInput.value;
             const phone = phoneInput.value;
             console.log(name, phone);
-            const foundContacts = await (0, _axiosLib.kommoAxios).get(`contacts?query=${phone}`);
-            if (foundContacts.data._embedded.contacts.length > 0) {
-                alert("This phone number already exists");
-                return;
-            }
+            // const foundContacts = await kommoAxios.get(`contacts?query=${phone}`);
+            // if (foundContacts.data._embedded.contacts.length > 0) {
+            //   alert('This phone number already exists');
+            //   return;
+            // }
             const lead = await (0, _axiosLib.kommoAxios).post("leads", {
                 name
             });
