@@ -1,3 +1,11 @@
+.project-section {
+  @mixin media 551 {
+    .container {
+      width: 92%;
+    }
+  }
+}
+
 .projects__title {
   text-align: center;
 }
@@ -148,5 +156,8 @@
 }
 
 .project-card__more-btn {
+  position: relative;
+  z-index: 2;
+
   margin-top: auto;
 }

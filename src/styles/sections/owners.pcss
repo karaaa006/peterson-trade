@@ -1,5 +1,10 @@
 .owners-section {
+  position: relative;
   z-index: 1;
+
+  @mixin media 501 {
+    padding-bottom: 200px;
+  }
 }
 
 .owners-section__title {
@@ -16,10 +21,6 @@
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.owners-section {
-  position: relative;
 }
 
 .owners-section__bg {

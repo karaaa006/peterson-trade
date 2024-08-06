@@ -11,18 +11,4 @@ import './components/popups.component.js';
 import './components/header.component.js';
 import './components/contacts.component.js';
 import './components/hero.component.js';
-
-const contactForm = document.querySelector('.contact-form');
-
-if (contactForm) {
-  const submitBtn = contactForm.querySelector('#submit-contact-us');
-  const nameInput = contactForm.querySelector('#name');
-  const phoneInput = contactForm.querySelector('#phone');
-
-  submitBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const name = nameInput.value;
-    const phone = phoneInput.value;
-    console.log(name, phone);
-  });
-}
+import './components/blog.component.js';
