@@ -3436,6 +3436,7 @@ body::-webkit-scrollbar-thumb {
 
 .university-hero-section {
   overflow: hidden;
+  padding-top: 0;
 }
 
 .university-hero-section .container {
@@ -3606,7 +3607,7 @@ body::-webkit-scrollbar-thumb {
   z-index: 1;
   display: none;
 
-  padding-top: 123px;
+  padding-top: 110px;
 }
 
 @media not all and (min-width: 769px) {
@@ -3617,6 +3618,8 @@ body::-webkit-scrollbar-thumb {
 	}
 
 .university-hero-mob__title {
+  margin-bottom: 7px;
+
   letter-spacing: 0.04rem;
 }
 
@@ -3774,6 +3777,13 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 
+@media not all and (min-width: 551px) {
+
+.advantages-section___title {
+    margin-bottom: 12px
+}
+	}
+
 .advantages__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -3874,6 +3884,13 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 
+@media not all and (min-width: 551px) {
+
+.instruments-section__title {
+    margin-bottom: 12px
+}
+	}
+
 .instruments {
   display: grid;
   grid-template-columns: 1fr 1.2fr 1fr;
@@ -3944,6 +3961,15 @@ body::-webkit-scrollbar-thumb {
         min-height: unset;
       }
 
+@media not all and (min-width: 451px) {
+        .instruments .instrument-card:nth-child(5n + 1) .instrument-card__bg {
+          min-width: 760px;
+          height: auto;
+          -o-object-position: -205px -30px;
+             object-position: -205px -30px;
+        }
+	}
+
 .instruments .instrument-card:nth-child(5n + 2) {
       grid-column: 1 / 2;
       grid-row: span 1;
@@ -3986,6 +4012,18 @@ body::-webkit-scrollbar-thumb {
     }
 	}
 
+@media not all and (min-width: 451px) {
+        .instruments .instrument-card:nth-child(5n + 3) .instrument-card__bg {
+          -o-object-position: 90px -40px;
+             object-position: 90px -40px;
+          -o-object-fit: contain;
+             object-fit: contain;
+          height: auto;
+          max-width: unset;
+          min-width: 380px;
+        }
+	}
+
 .instruments .instrument-card:nth-child(5n + 4) {
       grid-column: 3 / 3;
       grid-row: 1;
@@ -4026,6 +4064,18 @@ body::-webkit-scrollbar-thumb {
         grid-column: 1;
         grid-row: unset
     }
+	}
+
+@media not all and (min-width: 451px) {
+        .instruments .instrument-card:nth-child(5n + 5) .instrument-card__bg {
+          -o-object-position: 50px -65px;
+             object-position: 50px -65px;
+          -o-object-fit: contain;
+             object-fit: contain;
+          max-width: unset;
+          min-width: 440px;
+          height: auto;
+        }
 	}
 
 .instrument-card {
@@ -4084,6 +4134,13 @@ body::-webkit-scrollbar-thumb {
 
   background: rgba(255, 255, 255, 0.1);
 }
+
+@media not all and (min-width: 769px) {
+
+.instrument-card__inner-wrap {
+    background: rgba(255, 255, 255, 0.05)
+}
+	}
 
 .instrument-card__bg-wrap {
   position: absolute;
@@ -4200,6 +4257,20 @@ body::-webkit-scrollbar-thumb {
   filter: blur(10px);
 }
 
+@media not all and (min-width: 769px) {
+
+.presentation-section__bg-wrap {
+    top: unset;
+    right: unset;
+    left: -70%;
+    bottom: -41%;
+    width: 100%;
+    min-width: 1000px;
+    filter: blur(3px);
+    transform: scaleX(-1) rotate(-10deg);
+}
+	}
+
 .presentation-section__bg-wrap::before {
     content: '';
     position: absolute;
@@ -4234,6 +4305,14 @@ body::-webkit-scrollbar-thumb {
 }
 	}
 
+@media not all and (min-width: 551px) {
+
+.presentation__blur-logo {
+    filter: blur(3px);
+    z-index: 1
+}
+	}
+
 .presentation__text {
   max-width: clamp(500px, calc(500px + 167.00 * ((100vw - 768px) / 1152)), 667px);
 
@@ -4243,6 +4322,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .presentation__button {
+  position: relative;
+  z-index: 1;
   max-width: clamp(253px, calc(253px + 325.00 * ((100vw - 768px) / 1152)), 578px);
 
   background: transparent;
@@ -4263,6 +4344,36 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 
+@media not all and (min-width: 551px) {
+
+.tariffs-section__title {
+    margin-bottom: 75px
+}
+	}
+
+.tariffs-section__bg {
+  position: absolute;
+  top: -40%;
+  left: 0;
+
+  mix-blend-mode: lighten;
+  opacity: 0.6;
+}
+
+@media not all and (min-width: 901px) {
+
+.tariffs-section__bg {
+    top: -10%
+}
+	}
+
+@media not all and (min-width: 551px) {
+
+.tariffs-section__bg {
+    top: -7%
+}
+	}
+
 .tariffs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -4281,7 +4392,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 
   padding: 0 clamp(12px, calc(12px + 18.00 * ((100vw - 1024px) / 896)), 30px) clamp(16px, calc(16px + 14.00 * ((100vw - 1024px) / 896)), 30px);
-  border-radius: 24px;
+  border-radius: clamp(16px, calc(16px + 8.00 * ((100vw - 768px) / 1152)), 24px);
 
   background: linear-gradient(
     180deg,
@@ -4304,7 +4415,7 @@ body::-webkit-scrollbar-thumb {
     content: '';
     position: absolute;
     inset: 1px;
-    border-radius: 24px;
+    border-radius: clamp(16px, calc(16px + 8.00 * ((100vw - 768px) / 1152)), 24px);
     background: rgba(0, 0, 0, 1);
   }
 
@@ -4318,6 +4429,8 @@ body::-webkit-scrollbar-thumb {
   top: 0;
   left: 0;
 
+  border-radius: clamp(16px, calc(16px + 8.00 * ((100vw - 768px) / 1152)), 24px);
+
   width: 100%;
 }
 
@@ -4326,7 +4439,7 @@ body::-webkit-scrollbar-thumb {
 
   width: clamp(177px, calc(177px + 104.00 * ((100vw - 1024px) / 896)), 281px);
 
-  margin: -79px auto clamp(8px, calc(8px + 12.00 * ((100vw - 1024px) / 896)), 20px);
+  margin: clamp(-79px, calc(-50px + -29.00 * ((100vw - 768px) / 1152)), -50px) auto clamp(8px, calc(8px + 12.00 * ((100vw - 1024px) / 896)), 20px);
 }
 
 .tariff__title {
@@ -4397,6 +4510,7 @@ body::-webkit-scrollbar-thumb {
 
 .tariff__program-item.disabled .tariff__program-item-main::before {
         background: url('../../assets/images/close.svg') center no-repeat;
+        background-size: contain;
       }
 
 .tariff__program-item-main {
@@ -4417,9 +4531,10 @@ body::-webkit-scrollbar-thumb {
     width: clamp(13px, calc(13px + 4.00 * ((100vw - 1024px) / 896)), 17px);
     height: clamp(13px, calc(13px + 4.00 * ((100vw - 1024px) / 896)), 17px);
 
-    margin-right: 10px;
+    margin-right: clamp(7px, calc(7px + 3.00 * ((100vw - 768px) / 1152)), 10px);
 
     background: url('../../assets/images/check.svg') center no-repeat;
+    background-size: contain;
   }
 
 .tariff__program-item-main:not(:last-child) {
@@ -4615,7 +4730,7 @@ body::-webkit-scrollbar-thumb {
 
   font-family: 'Inter', sans-serif;
   font-size: clamp(12px, calc(12px + 4.00 * ((100vw - 768px) / 1152)), 16px);
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1.4;
   letter-spacing: 0.1em;
 
