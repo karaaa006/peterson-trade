@@ -4732,7 +4732,7 @@ body::-webkit-scrollbar-thumb {
   font-size: clamp(12px, calc(12px + 4.00 * ((100vw - 768px) / 1152)), 16px);
   font-weight: 200;
   line-height: 1.4;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.01em;
 
   scrollbar-width: none;
 }
