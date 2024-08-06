@@ -27,6 +27,17 @@
   transform: scaleX(-1);
   filter: blur(10px);
 
+  @mixin media 769 {
+    top: unset;
+    right: unset;
+    left: -70%;
+    bottom: -41%;
+    width: 100%;
+    min-width: 1000px;
+    filter: blur(3px);
+    transform: scaleX(-1) rotate(-10deg);
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -57,6 +68,11 @@
   @mixin media 769 {
     filter: blur(4px);
   }
+
+  @mixin media 551 {
+    filter: blur(3px);
+    z-index: 1;
+  }
 }
 
 .presentation__text {
@@ -68,6 +84,8 @@
 }
 
 .presentation__button {
+  position: relative;
+  z-index: 1;
   max-width: ac(578px, 253px);
 
   background: transparent;

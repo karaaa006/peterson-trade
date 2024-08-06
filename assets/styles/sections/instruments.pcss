@@ -1,5 +1,9 @@
 .instruments-section__title {
   text-align: center;
+
+  @mixin media 551 {
+    margin-bottom: 12px;
+  }
 }
 
 .instruments {
@@ -63,6 +67,14 @@
         text-align: center;
         min-height: unset;
       }
+
+      @mixin media 451 {
+        .instrument-card__bg {
+          min-width: 760px;
+          height: auto;
+          object-position: -205px -30px;
+        }
+      }
     }
     &:nth-child(5n + 2) {
       grid-column: 1 / 2;
@@ -97,6 +109,16 @@
         grid-column: 1;
         grid-row: unset;
       }
+
+      @mixin media 451 {
+        .instrument-card__bg {
+          object-position: 90px -40px;
+          object-fit: contain;
+          height: auto;
+          max-width: unset;
+          min-width: 380px;
+        }
+      }
     }
     &:nth-child(5n + 4) {
       grid-column: 3 / 3;
@@ -130,6 +152,16 @@
       @mixin media 1025 {
         grid-column: 1;
         grid-row: unset;
+      }
+
+      @mixin media 451 {
+        .instrument-card__bg {
+          object-position: 50px -65px;
+          object-fit: contain;
+          max-width: unset;
+          min-width: 440px;
+          height: auto;
+        }
       }
     }
   }
@@ -184,6 +216,10 @@
   border-radius: 12px;
 
   background: rgba(255, 255, 255, 0.1);
+
+  @mixin media 769 {
+    background: rgba(255, 255, 255, 0.05);
+  }
 }
 
 .instrument-card__bg-wrap {

@@ -2854,6 +2854,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .university-hero-section {
+  padding-top: 0;
   overflow: hidden;
 }
 
@@ -2984,7 +2985,7 @@ body::-webkit-scrollbar-thumb {
 
 .university-hero-mob {
   z-index: 1;
-  padding-top: 123px;
+  padding-top: 110px;
   display: none;
   position: relative;
 }
@@ -2997,6 +2998,7 @@ body::-webkit-scrollbar-thumb {
 
 .university-hero-mob__title {
   letter-spacing: .04rem;
+  margin-bottom: 7px;
 }
 
 .university-hero-mob__descr {
@@ -3125,6 +3127,12 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 
+@media not all and (width >= 551px) {
+  .advantages-section___title {
+    margin-bottom: 12px;
+  }
+}
+
 .advantages__list {
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(12px, 1.5625vw, 30px);
@@ -3215,6 +3223,12 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 
+@media not all and (width >= 551px) {
+  .instruments-section__title {
+    margin-bottom: 12px;
+  }
+}
+
 .instruments {
   grid-template-columns: 1fr 1.2fr 1fr;
   gap: clamp(12px, 1.5625vw, 30px);
@@ -3272,6 +3286,15 @@ body::-webkit-scrollbar-thumb {
   min-height: unset;
 }
 
+@media not all and (width >= 451px) {
+  .instruments .instrument-card:nth-child(5n+1) .instrument-card__bg {
+    -o-object-position: -205px -30px;
+    object-position: -205px -30px;
+    min-width: 760px;
+    height: auto;
+  }
+}
+
 .instruments .instrument-card:nth-child(5n+2) {
   background: linear-gradient(300deg, #fff 0%, #fff0 59.75% 75.3%, #fff 100%);
   grid-area: span 1 / 1 / auto / 2;
@@ -3296,6 +3319,18 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+@media not all and (width >= 451px) {
+  .instruments .instrument-card:nth-child(5n+3) .instrument-card__bg {
+    -o-object-position: 90px -40px;
+    object-position: 90px -40px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    max-width: unset;
+    min-width: 380px;
+    height: auto;
+  }
+}
+
 .instruments .instrument-card:nth-child(5n+4) {
   background: linear-gradient(240deg, #fff 0%, #fff0 59.75% 75.3%, #fff 100%);
   grid-area: 1 / 3 / auto / 3;
@@ -3317,6 +3352,18 @@ body::-webkit-scrollbar-thumb {
   .instruments .instrument-card:nth-child(5n+5) {
     grid-column: 1;
     grid-row: unset;
+  }
+}
+
+@media not all and (width >= 451px) {
+  .instruments .instrument-card:nth-child(5n+5) .instrument-card__bg {
+    -o-object-position: 50px -65px;
+    object-position: 50px -65px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    max-width: unset;
+    min-width: 440px;
+    height: auto;
   }
 }
 
@@ -3358,6 +3405,12 @@ body::-webkit-scrollbar-thumb {
   height: 100%;
   position: relative;
   overflow: hidden;
+}
+
+@media not all and (width >= 769px) {
+  .instrument-card__inner-wrap {
+    background: #ffffff0d;
+  }
 }
 
 .instrument-card__bg-wrap {
@@ -3444,6 +3497,19 @@ body::-webkit-scrollbar-thumb {
   transform: scaleX(-1);
 }
 
+@media not all and (width >= 769px) {
+  .presentation-section__bg-wrap {
+    top: unset;
+    right: unset;
+    filter: blur(3px);
+    width: 100%;
+    min-width: 1000px;
+    bottom: -41%;
+    left: -70%;
+    transform: scaleX(-1)rotate(-10deg);
+  }
+}
+
 .presentation-section__bg-wrap:before {
   content: "";
   background: linear-gradient(#08090a 0%, #08090a00 29.8% 69.6%, #08090a 100%);
@@ -3468,6 +3534,13 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+@media not all and (width >= 551px) {
+  .presentation__blur-logo {
+    filter: blur(3px);
+    z-index: 1;
+  }
+}
+
 .presentation__text {
   text-align: justify;
   max-width: clamp(500px, 14.4965vw + 388.667px, 667px);
@@ -3476,9 +3549,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .presentation__button {
+  z-index: 1;
   background: none;
   border: none;
   max-width: clamp(253px, 28.2118vw + 36.3333px, 578px);
+  position: relative;
 }
 
 .presentation__button .presentation__button-img {
@@ -3492,6 +3567,32 @@ body::-webkit-scrollbar-thumb {
 .tariffs-section__title {
   text-align: center;
   margin-bottom: 109px;
+}
+
+@media not all and (width >= 551px) {
+  .tariffs-section__title {
+    margin-bottom: 75px;
+  }
+}
+
+.tariffs-section__bg {
+  mix-blend-mode: lighten;
+  opacity: .6;
+  position: absolute;
+  top: -40%;
+  left: 0;
+}
+
+@media not all and (width >= 901px) {
+  .tariffs-section__bg {
+    top: -10%;
+  }
+}
+
+@media not all and (width >= 551px) {
+  .tariffs-section__bg {
+    top: -7%;
+  }
 }
 
 .tariffs {
@@ -3509,7 +3610,7 @@ body::-webkit-scrollbar-thumb {
 
 .tariff {
   background: linear-gradient(#fff 0%, #9990 17.29%, #fff 51.97%);
-  border-radius: 24px;
+  border-radius: clamp(16px, .694445vw + 10.6667px, 24px);
   padding: 0 clamp(12px, 2.00893vw - 8.57143px, 30px) clamp(16px, 1.5625vw, 30px);
   position: relative;
 }
@@ -3525,7 +3626,7 @@ body::-webkit-scrollbar-thumb {
 .tariff:before {
   content: "";
   background: #000;
-  border-radius: 24px;
+  border-radius: clamp(16px, .694445vw + 10.6667px, 24px);
   position: absolute;
   inset: 1px;
 }
@@ -3536,6 +3637,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .tariff__decor {
+  border-radius: clamp(16px, .694445vw + 10.6667px, 24px);
   width: 100%;
   position: absolute;
   top: 0;
@@ -3544,7 +3646,7 @@ body::-webkit-scrollbar-thumb {
 
 .tariff__icon {
   width: clamp(177px, 11.6071vw + 58.1429px, 281px);
-  margin: -79px auto clamp(8px, 1.33929vw - 5.71429px, 20px);
+  margin: clamp(-79px, -2.51736vw - 30.6667px, -50px) auto clamp(8px, 1.33929vw - 5.71429px, 20px);
   display: block;
 }
 
@@ -3607,7 +3709,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .tariff__program-item.disabled .tariff__program-item-main:before {
-  background: url("../img/close.svg") center no-repeat;
+  background: url("../img/close.svg") center / contain no-repeat;
 }
 
 .tariff__program-item-main {
@@ -3618,11 +3720,11 @@ body::-webkit-scrollbar-thumb {
 
 .tariff__program-item-main:before {
   content: "";
-  background: url("../img/check.svg") center no-repeat;
+  background: url("../img/check.svg") center / contain no-repeat;
   flex-shrink: 0;
   width: clamp(13px, .446429vw + 8.42857px, 17px);
   height: clamp(13px, .446429vw + 8.42857px, 17px);
-  margin-right: 10px;
+  margin-right: clamp(7px, .260417vw + 5px, 10px);
   display: block;
   position: relative;
   top: .1em;
@@ -3788,7 +3890,7 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: clamp(2px, .520833vw - 2px, 8px);
   font-family: Inter, sans-serif;
   font-size: clamp(12px, .347222vw + 9.33333px, 16px);
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1.4;
   overflow: auto;
 }
