@@ -26,12 +26,12 @@ if (contactForm) {
       const phone = phoneInput.value;
       console.log(name, phone);
 
-      const foundContacts = await kommoAxios.get(`contacts?query=${phone}`);
+      // const foundContacts = await kommoAxios.get(`contacts?query=${phone}`);
 
-      if (foundContacts.data._embedded.contacts.length > 0) {
-        alert('This phone number already exists');
-        return;
-      }
+      // if (foundContacts.data._embedded.contacts.length > 0) {
+      //   alert('This phone number already exists');
+      //   return;
+      // }
 
       const lead = await kommoAxios.post('leads', {
         name,
