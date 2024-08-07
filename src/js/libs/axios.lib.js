@@ -1,11 +1,8 @@
 import axios from 'axios';
 
-const TOKEN = '';
-
-export const kommoAxios = axios.create({
-  baseURL: 'https://petersontrade.kommo.com/api/v4/',
+export const api = axios.create({
+  baseURL: 'http://185.237.207.38:7777/petersontrade.com',
   headers: {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${TOKEN}`,
   },
 });
