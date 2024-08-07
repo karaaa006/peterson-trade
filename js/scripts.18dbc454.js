@@ -13137,6 +13137,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _gsap = require("gsap");
 var _gsapDefault = parcelHelpers.interopDefault(_gsap);
 var _axiosLib = require("../libs/axios.lib");
+var _notifyUtils = require("../utils/notify.utils");
 const contactForm = document.querySelector(".contact-form");
 let b1 = "linear-gradient(216deg, #ffffff 25.97%, rgba(255, 255, 255, 0) 36.63%, rgba(255, 255, 255, 0) 67.82%, #ffffff 78.13%)";
 let b2 = "linear-gradient(144deg, #ffffff 25.97%, rgba(255, 255, 255, 0) 36.63%, rgba(255, 255, 255, 0) 67.82%, #ffffff 78.13%)";
@@ -13158,41 +13159,50 @@ if (contactForm) {
     submitBtn.addEventListener("click", async (e)=>{
         e.preventDefault();
         try {
+            submitBtn.classList.add("is-loading");
             const name = nameInput.value;
             const phone = phoneInput.value;
-            console.log(name, phone);
-            // const foundContacts = await kommoAxios.get(`contacts?query=${phone}`);
-            // if (foundContacts.data._embedded.contacts.length > 0) {
-            //   alert('This phone number already exists');
-            //   return;
-            // }
-            const lead = await (0, _axiosLib.kommoAxios).post("leads", {
-                name
-            });
-            console.log("lead", lead);
-            const contact = await (0, _axiosLib.kommoAxios).post("contacts", {
+            const foundContacts = await (0, _axiosLib.api).get(`/contact?query=${phone}`);
+            if (foundContacts?.data) {
+                console.log("Contact allready exists!");
+                (0, _notifyUtils.notify)("Contact allready exists!", "error");
+                throw new Error("Contact allready exists!");
+            }
+            const newContact = await (0, _axiosLib.api).post("/contact", {
                 name,
                 phone
             });
-            console.log("contact", contact);
+            const newLead = await (0, _axiosLib.api).post("/lead", {
+                name,
+                phone,
+                pipeline_id: 8587595
+            });
+            await (0, _axiosLib.api).post("/lead-contact-link", {
+                lead_id: newLead.data._embedded.leads[0].id,
+                contact_id: newContact.data._embedded.contacts[0].id
+            });
+            nameInput.value = "";
+            phoneInput.value = "";
+            (0, _notifyUtils.notify)("Feedback sent successfully!", "info");
         } catch (error) {
             console.log(error);
+            (0, _notifyUtils.notify)("Error!", "error");
+        } finally{
+            submitBtn.classList.remove("is-loading");
         }
     });
 }
 
-},{"gsap":"k3DGt","../libs/axios.lib":"i1Ly6","@parcel/transformer-js/src/esmodule-helpers.js":"6elpC"}],"i1Ly6":[function(require,module,exports) {
+},{"gsap":"k3DGt","../libs/axios.lib":"i1Ly6","../utils/notify.utils":"auPd2","@parcel/transformer-js/src/esmodule-helpers.js":"6elpC"}],"i1Ly6":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "kommoAxios", ()=>kommoAxios);
+parcelHelpers.export(exports, "api", ()=>api);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-const TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjZiNjgwOTRlZjU0NmVhYmI3YTZjYjRkNTJlNDBiM2NkZjc3Zjg4NjZhMGIzODdjNzZiOTZhODEyYmYwMGRhZGY4YjM1ZDQ0ZDRjY2Y0ZmM1In0.eyJhdWQiOiJjNDZiZjJhOS0wNGE0LTQ2YjYtYTU0Mi01MzI5OTRlMGQwMmQiLCJqdGkiOiI2YjY4MDk0ZWY1NDZlYWJiN2E2Y2I0ZDUyZTQwYjNjZGY3N2Y4ODY2YTBiMzg3Yzc2Yjk2YTgxMmJmMDBkYWRmOGIzNWQ0NGQ0Y2NmNGZjNSIsImlhdCI6MTcyMjg5MzA3NiwibmJmIjoxNzIyODkzMDc2LCJleHAiOjE3ODgxMzQ0MDAsInN1YiI6IjEwODU4MzMxIiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMyNDUwODcxLCJiYXNlX2RvbWFpbiI6ImtvbW1vLmNvbSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJjcm0iLCJmaWxlcyIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiLCJwdXNoX25vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiN2E5YTQ4NTUtZjU2YS00MmIyLWEyNzktN2NlYmYzMDZhNDY1In0.TL2rYPVjiOJOu0V9gTyTuZ-pDdlK9O_RKHbptlWjbs9j5aRwF3pvbETmAQm6G3czJq9kZVueosI4WR5c8lLiYmiSenUj85GNb-KgmfKCo2H4kSArKCF65wFq_Lkg5CJRpTLm3DgwVn5L64cui9fh39qmTLGymMiqme7_ma96zmeW_nLk6DEi4Cf00nAUUsEG6dNqcNco3rcXpRrySlK4Lk2EuwPB-4VnzYkrITJ_WOB0g1O_7NxJlUgTkgqo5Dnzm2PJYdwQLS5ZG_a9dTlNS5i2-mkxQ2OccGfxLCang_JXWUGY__zFw3k1pq4IB90LGmG5G1FuSBPUDFT1GHaHqQ";
-const kommoAxios = (0, _axiosDefault.default).create({
-    baseURL: "https://petersontrade.kommo.com/api/v4/",
+const api = (0, _axiosDefault.default).create({
+    baseURL: "http://185.237.207.38:7777/petersontrade.com",
     headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${TOKEN}`
+        "Content-Type": "application/json"
     }
 });
 
@@ -18109,6 +18119,22 @@ Object.entries(HttpStatusCode).forEach(([key, value])=>{
     HttpStatusCode[value] = key;
 });
 exports.default = HttpStatusCode;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"6elpC"}],"auPd2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "notify", ()=>notify);
+const notifyRef = document.querySelector(".notify");
+const notify = (message, type = "info")=>{
+    notifyRef.innerHTML = message;
+    notifyRef.classList.add(type);
+    notifyRef.classList.add("active");
+    setTimeout(()=>{
+        notifyRef.innerHTML = "";
+        notifyRef.classList.remove(type);
+        notifyRef.classList.remove("active");
+    }, 3000);
+};
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"6elpC"}],"7sPwr":[function(require,module,exports) {
 const heroSection = document.querySelector(".hero-section");

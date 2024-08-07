@@ -184,3 +184,39 @@
     }
   }
 }
+
+.notify {
+  position: fixed;
+  z-index: 9999;
+  right: 20px;
+  bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: ac(300px, 200px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: ac(10px, 5px);
+  padding: ac(20px, 10px);
+
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+
+  font-size: 14px;
+
+  transition: ease 0.3s;
+
+  transform: translateX(110%);
+  opacity: 0;
+
+  &.error {
+    border-color: rgba(255, 0, 0, 0.2);
+  }
+
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

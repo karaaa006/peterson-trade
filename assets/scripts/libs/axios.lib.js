@@ -1,12 +1,8 @@
 import axios from 'axios';
 
-const TOKEN =
-  'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjZiNjgwOTRlZjU0NmVhYmI3YTZjYjRkNTJlNDBiM2NkZjc3Zjg4NjZhMGIzODdjNzZiOTZhODEyYmYwMGRhZGY4YjM1ZDQ0ZDRjY2Y0ZmM1In0.eyJhdWQiOiJjNDZiZjJhOS0wNGE0LTQ2YjYtYTU0Mi01MzI5OTRlMGQwMmQiLCJqdGkiOiI2YjY4MDk0ZWY1NDZlYWJiN2E2Y2I0ZDUyZTQwYjNjZGY3N2Y4ODY2YTBiMzg3Yzc2Yjk2YTgxMmJmMDBkYWRmOGIzNWQ0NGQ0Y2NmNGZjNSIsImlhdCI6MTcyMjg5MzA3NiwibmJmIjoxNzIyODkzMDc2LCJleHAiOjE3ODgxMzQ0MDAsInN1YiI6IjEwODU4MzMxIiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMyNDUwODcxLCJiYXNlX2RvbWFpbiI6ImtvbW1vLmNvbSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJjcm0iLCJmaWxlcyIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiLCJwdXNoX25vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiN2E5YTQ4NTUtZjU2YS00MmIyLWEyNzktN2NlYmYzMDZhNDY1In0.TL2rYPVjiOJOu0V9gTyTuZ-pDdlK9O_RKHbptlWjbs9j5aRwF3pvbETmAQm6G3czJq9kZVueosI4WR5c8lLiYmiSenUj85GNb-KgmfKCo2H4kSArKCF65wFq_Lkg5CJRpTLm3DgwVn5L64cui9fh39qmTLGymMiqme7_ma96zmeW_nLk6DEi4Cf00nAUUsEG6dNqcNco3rcXpRrySlK4Lk2EuwPB-4VnzYkrITJ_WOB0g1O_7NxJlUgTkgqo5Dnzm2PJYdwQLS5ZG_a9dTlNS5i2-mkxQ2OccGfxLCang_JXWUGY__zFw3k1pq4IB90LGmG5G1FuSBPUDFT1GHaHqQ';
-
-export const kommoAxios = axios.create({
-  baseURL: 'https://petersontrade.kommo.com/api/v4/',
+export const api = axios.create({
+  baseURL: 'http://185.237.207.38:7777/petersontrade.com',
   headers: {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${TOKEN}`,
   },
 });
