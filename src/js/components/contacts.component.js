@@ -16,9 +16,21 @@ if (contactForm) {
     .add(gsap.to(contactForm, { ease: 'none', duration: 6, background: b2 }))
     .play(0);
 
+  // Form
+
   const submitBtn = contactForm.querySelector('#submit-contact-us');
   const nameInput = contactForm.querySelector('#name');
   const phoneInput = contactForm.querySelector('#phone');
+  const tariffBtns = document.querySelectorAll('.tariff .btn');
+
+  let selectedTariff = '-';
+
+  tariffBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      selectedTariff = btn.dataset.tariff;
+      console.log(selectedTariff);
+    });
+  });
 
   submitBtn.addEventListener('click', async (e) => {
     e.preventDefault();
@@ -56,6 +68,7 @@ if (contactForm) {
         link: window.location.href,
         name: name,
         phone: phone,
+        tariff: selectedTariff,
       });
 
       nameInput.value = '';

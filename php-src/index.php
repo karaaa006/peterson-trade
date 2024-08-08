@@ -89,12 +89,13 @@ $router->addRoute('POST', '/lead-contact-link', function () {
 $router->addRoute('POST', '/lead/user-data', function () {
          $data = get_request_data();
 
-        if (!isset($data['link']) || !isset($data['lead_id']) || !isset($data['name']) || !isset($data['phone'])) {
+        if (!isset($data['link']) || !isset($data['lead_id']) || !isset($data['name']) || !isset($data['phone']) || !isset($data['tariff'])) {
             send_response("Missing required fields", 400);
         }
 
         $text = "User data: 
         Link: {$data['link']}
+        Tariff: {$data['tariff']}
         Name: {$data['name']}
         Phone: {$data['phone']}
         User agent: {$_SERVER['HTTP_USER_AGENT']}
