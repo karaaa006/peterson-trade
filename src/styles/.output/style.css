@@ -4577,6 +4577,8 @@ body.no-scroll {
 }
 
 .tariff__descr {
+  min-height: 6rem;
+
   margin-bottom: clamp(20px, calc(20px + 22.00 * ((100vw - 1024px) / 896)), 42px);
 
   font-size: clamp(14px, calc(14px + 6.00 * ((100vw - 1024px) / 896)), 20px);
