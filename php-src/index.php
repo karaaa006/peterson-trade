@@ -86,5 +86,35 @@ $router->addRoute('POST', '/lead-contact-link', function () {
         send_response($responseData, 200);
     });
 
+$router->addRoute('POST', '/lead/user-data', function () {
+         $data = get_request_data();
+
+        if (!isset($data['link']) || !isset($data['lead_id']) || !isset($data['name']) || !isset($data['phone'])) {
+            send_response("Missing required fields", 400);
+        }
+
+        $text = "User data: 
+        Link: {$data['link']}
+        Name: {$data['name']}
+        Phone: {$data['phone']}
+        User agent: {$_SERVER['HTTP_USER_AGENT']}
+        IP-address: {$_SERVER['REMOTE_ADDR']}
+        Date: " . date("Y-m-d H:i:s") . "
+        Referrer: {$_SERVER['HTTP_REFERER']}
+        ";
+
+        $formatedData = [[
+            "entity_id" => $data['lead_id'],
+            "note_type" => "common",
+            "params" => [
+                "text" => $text
+            ]
+        ]];
+        
+        $responseData = crm_post_request("/leads/notes", $formatedData);
+
+        send_response($responseData, 200);
+    });
+
 
 $router->matchRoute();

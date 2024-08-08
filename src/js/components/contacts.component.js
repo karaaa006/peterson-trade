@@ -51,6 +51,13 @@ if (contactForm) {
         contact_id: newContact.data._embedded.contacts[0].id,
       });
 
+      await api.post('/lead/user-data', {
+        lead_id: newLead.data._embedded.leads[0].id,
+        link: window.location.href,
+        name: name,
+        phone: phone,
+      });
+
       nameInput.value = '';
       phoneInput.value = '';
 

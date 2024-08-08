@@ -3531,7 +3531,7 @@ body.no-scroll {
 }
 
 .university-hero-section {
-  overflow: hidden;
+  /* overflow: hidden; */
   padding-top: 0;
 }
 
@@ -4006,6 +4006,14 @@ body.no-scroll {
       grid-row: 1 / span 2;
 
       aspect-ratio: unset;
+
+      /* @mixin media 451 {
+        .instrument-card__bg {
+          min-width: 760px;
+          height: auto;
+          object-position: -205px -30px;
+        }
+      } */
     }
 
 @media not all and (min-width: 1025px) {
@@ -4056,15 +4064,6 @@ body.no-scroll {
         text-align: center;
         min-height: unset;
       }
-
-@media not all and (min-width: 451px) {
-        .instruments .instrument-card:nth-child(5n + 1) .instrument-card__bg {
-          min-width: 760px;
-          height: auto;
-          -o-object-position: -205px -30px;
-             object-position: -205px -30px;
-        }
-  }
 
 .instruments .instrument-card:nth-child(5n + 2) {
       grid-column: 1 / 2;
