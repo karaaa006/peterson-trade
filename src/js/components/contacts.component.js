@@ -55,6 +55,8 @@ if (contactForm) {
       phoneInput.value = '';
 
       notify('Feedback sent successfully!', 'info');
+
+      window.open('https://t.me/peterson_trade_bot', '_blank');
     } catch (error) {
       console.log(error);
       notify('Error!', 'error');

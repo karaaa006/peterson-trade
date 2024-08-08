@@ -23,6 +23,23 @@ export function ac(
   }
 }
 
+export function ach(startSize, endSize, minBreakpoint, maxBreakpoint) {
+  const startSizeFormatted = startSize.replace('px', '');
+  const endSizeFormatted = endSize.replace('px', '');
+
+  const difference = (startSizeFormatted - endSizeFormatted).toFixed(2);
+
+  const formula = `calc(${endSizeFormatted}px + ${difference} * ((100vh - ${minBreakpoint}px) / ${
+    maxBreakpoint - minBreakpoint
+  }))`;
+
+  if (difference > 0) {
+    return `clamp(${endSizeFormatted}px, ${formula}, ${startSizeFormatted}px)`;
+  } else {
+    return `clamp(${startSizeFormatted}px, ${formula}, ${endSizeFormatted}px)`;
+  }
+}
+
 export function rc(
   startSize,
   endSize,

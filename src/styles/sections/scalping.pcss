@@ -33,6 +33,10 @@
   aspect-ratio: 3125 / 1400;
 
   margin: 0 auto 50px;
+
+  @mixin media 551 {
+    aspect-ratio: 3125 / 2500;
+  }
 }
 
 .scalping__video-pc {
@@ -60,7 +64,11 @@
   top: 20.5%;
   transform: translateX(-50%);
 
-  width: ;
+  /* width: ; */
+
+  @mixin media 551 {
+    top: 28%;
+  }
 }
 
 .scalping__more-btn {

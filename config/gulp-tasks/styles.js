@@ -21,6 +21,7 @@ import through2 from 'through2';
 
 import {
   ac,
+  ach,
   rc,
   perc,
   vw,
@@ -44,7 +45,7 @@ export function styles() {
     postcssExtend,
     pcssShortNativeVars,
     pcssFunctions({
-      functions: { ac, rc, perc, vw, setTransition },
+      functions: { ac, ach, rc, perc, vw, setTransition },
     }),
     // pcssCustomProperties,
     postcssColor,

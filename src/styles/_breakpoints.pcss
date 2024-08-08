@@ -83,15 +83,21 @@
 }
 
 @define-mixin media $width {
-	@media not all and (min-width: $(width)px) {
-		@mixin-content;
-	}
+  @media not all and (min-width: $(width)px) {
+    @mixin-content;
+  }
 }
 
 @define-mixin min-media $width {
-	@media (min-width: $(width)px) {
-		@mixin-content;
-	}
+  @media (min-width: $(width)px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin media-height $height {
+  @media not all and (min-height: $(height)px) {
+    @mixin-content;
+  }
 }
 
 @define-mixin mobile-menu-start-point {
