@@ -37,5 +37,11 @@
 <symbol id="icon-close" viewBox="0 0 32 32">
 <path d="M3.825 0l12.175 12.175 12.175-12.175 3.825 3.825-12.175 12.175 12.175 12.175-3.825 3.825-12.175-12.175-12.175 12.175-3.825-3.825 12.175-12.175-12.175-12.175 3.825-3.825z"></path>
 </symbol>
+<symbol id="icon-circle-arrow-right" viewBox="0 0 32 32">
+<path d="M5.545 32l20.91-16-20.91-16 4.278 16-4.278 16z"></path>
+</symbol>
+<symbol id="icon-circle-arrow-left" viewBox="0 0 32 32">
+<path d="M26.455 0l-20.91 16 20.91 16-4.278-16 4.278-16z"></path>
+</symbol>
 </defs>
 </svg>
