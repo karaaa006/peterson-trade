@@ -50,10 +50,6 @@
       "staticOutPath": "assets/static"
     },
     {
-      "staticPath": "./src/assets/lottie",
-      "staticOutPath": "assets/lottie"
-    },
-    {
       "staticPath": "./src/js",
       "staticOutPath": "assets/scripts"
     },

@@ -43,7 +43,7 @@ if (contactForm) {
       const newLead = await api.post('/lead', {
         name,
         phone,
-        pipeline_id: 8587595,
+        pipeline_id: 8243187,
       });
 
       await api.post('/lead-contact-link', {
@@ -56,10 +56,10 @@ if (contactForm) {
 
       notify('Feedback sent successfully!', 'info');
 
-      window.open('https://t.me/peterson_trade_bot', '_blank');
+      window.open('https://t.me/peterson_trade_bot', '_self');
     } catch (error) {
       console.log(error);
-      notify('Error!', 'error');
+      notify('Error!', JSON.stringify(error));
     } finally {
       submitBtn.classList.remove('is-loading');
     }

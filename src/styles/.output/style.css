@@ -277,6 +277,10 @@ body::-webkit-scrollbar-thumb {
     border-radius: 0;
   }
 
+body.no-scroll {
+    overflow: hidden;
+  }
+
 .swiper-wrapper {
   left: 0 !important;
 }
@@ -813,6 +817,8 @@ body::-webkit-scrollbar-thumb {
   left: 0;
   bottom: 0;
   right: 0;
+
+  overflow: auto;
 
   display: flex;
   align-items: center;
@@ -1389,7 +1395,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     inset: 0;
 
-    border-radius: 12px;
+    border-radius: clamp(8px, calc(8px + 4.00 * ((100vw - 768px) / 1152)), 12px);
     border: 2px solid var(--border-color);
 
     background: var(--bg-hover-color);
